@@ -1,6 +1,6 @@
 # a и b катеты прямоугольного треугольника
-a = int(input())
-b = int(input())
+a = float(input())
+b = float(input())
 # расчет площади
 s = 0.5 * (a * b)
 print(s)
