@@ -1,7 +1,5 @@
 a = 5
 b = 6
-x = (a**2+b**2)**0.5
-gipot = x
-y = 0.5*(a*b)
-ploshad = y
+gipot = (a**2+b**2)**0.5
+ploshad = 0.5*(a*b)
 print(f'гипотенуза = {gipot}, площадь = {ploshad}')
