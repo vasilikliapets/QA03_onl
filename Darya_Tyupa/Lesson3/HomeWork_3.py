@@ -35,11 +35,15 @@ print(string_1)
 print("task 9")
 print("длина строки =",len(string_1))    #узнаем длину строки
 # №10
-vpr_1=(string_1[-5:])     #вычленяем слово
+vpr_1=string_1[-5:]     #вычленяем слово
 vobr_1=vpr_1[::-1]   #пишем его задом наперёд
+print(vpr_1)
+print(vobr_1)
 # №11
 vpr_2=string_1[1::2]    #каждая вторая буква
 vobr_2=vpr_2[::-1]    #каждая вторая буква в обратном порядке
+print(vpr_2)
+print(vobr_2)
 # №12
 print("task 10-12")
 print('Task 10: {}, {} Task 11: {}, {}'.format(vpr_1, vobr_1, vpr_2,vobr_2))
