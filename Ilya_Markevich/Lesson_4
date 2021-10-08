@@ -26,9 +26,10 @@ print(z) # 5.1 Объеденить оба
 a.update(b)
 print(a) # 5.2 Обновите словарь “a” элементами из словаря “b”
 
-print(all(a.values())) # 5.3 Проверка есть ли пустые либо =0 значения в а (Доделать)!!
+empty = False
+print(empty in a.values()) # 5.3 Проверка есть ли пустые либо =0 значения в а
 
-print(all(b.values())) #5.4 Проверить что есть хотя бы одно пустое значение !! (Доделать)
+print(all(b.values())) #5.4 Проверить что есть хотя бы одно пустое значение
 
 print(sorted(a.items(), reverse = True)) #5.5 Сортиврока по алфавиту в обратном порядке
 
@@ -52,3 +53,7 @@ per_1 = 10
 per_2 =25
 print('Summ is {s} and diff = {d}.'.format(s=per_1+per_2, d=per_1-per_2)) #1 format
 print(f'Summ is {per_1+per_2} and diff = {per_1-per_2}.') #1 f-strings
+
+list_of_children = ['Sasha', 'Vasia', 'Nikalai']
+print('First child is {man_1}, second is {man_2}, and last one - {man_3}'.format(man_1=list_of_children[0], man_2=list_of_children[1],man_3= list_of_children[2]))
+# Элементы списка в строке
