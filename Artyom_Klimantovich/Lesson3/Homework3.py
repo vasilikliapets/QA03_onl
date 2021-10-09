@@ -49,5 +49,3 @@ print(task.upper())
 #15
 print(task.count("Task"))
 
-
-
