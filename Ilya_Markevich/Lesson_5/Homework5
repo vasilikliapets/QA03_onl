@@ -7,3 +7,11 @@ if len(t) > 0:
             print(total)
 elif len(t) == 0: # Проверка пустой ли список
     print('0')
+
+
+#5 Проверить, все ли элементы одинаковые
+mylist = [1, 1, 1]
+if mylist.count(mylist[0]) == len(mylist):    #mylist[0]) == len(mylist) количество повторяющихся символов равно общей длине
+    print(mylist, True)
+elif mylist.count(mylist[0]) != len(mylist):
+     print(mylist, False)
