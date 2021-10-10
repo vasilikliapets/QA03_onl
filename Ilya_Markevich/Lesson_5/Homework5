@@ -1,0 +1,9 @@
+# Задание №7
+t = [1, 2, 3]
+total = 0 
+for i in t:
+    total = total + i
+if len(t) > 0:
+            print(total)
+elif len(t) == 0: # Проверка пустой ли список
+    print('0')
