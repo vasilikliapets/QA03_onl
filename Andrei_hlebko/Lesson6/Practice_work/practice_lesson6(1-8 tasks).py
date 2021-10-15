@@ -78,7 +78,7 @@
 # 8 Фильтр. Функция принимает на вход список, проверяет есть ли эти элементы в списке exclude,
 # если есть удаляет их и возвращает список с оставшимися элементами
 # exclude = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]
-#
+
 # filter_list(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]) =>
 #                                                                   ["Mallard", "Hook Bill", "Crested", "Blue Swedish"]
 # ["Mallard", "Barbary", "Hook Bill", "Blue Swedish", "Crested"] => ["Mallard", "Barbary", "Hook Bill", "Blue Swedish", "Crested"]
