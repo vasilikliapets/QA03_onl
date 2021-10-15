@@ -42,7 +42,8 @@ print(all(a.values()))
 # Проверить что есть хотя бы одно пустое значение (результат выполнения должен быть True)
 print(any(a.values()))
 # Отсортировать словарь по алфавиту в обратном порядке
-print(sorted(a.items(), reverse=True))
+print(dict(sorted(a.items(), reverse=True)))
+
 # Изменить значение под одним из ключей и вывести все значения
 a['d'] = 5
 print(a)
