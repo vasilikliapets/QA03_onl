@@ -36,7 +36,8 @@ print(not all(list))
 print("Часть 5")
 # Использование метода sorted() для сортировки,
 # ключа reverse() для сортировки в обратном порядке
-print(sorted(a.items(), reverse=True))
+for k, v in sorted(a.items(), reverse=True):
+    print(k,v)
 # 6. Изменить значение под одним из ключей и вывести все значения
 print("Часть 6")
 a['c'] = "Hello"
