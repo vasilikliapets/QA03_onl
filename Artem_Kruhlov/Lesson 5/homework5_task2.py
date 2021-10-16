@@ -1,5 +1,5 @@
 names = list(input("Введите имена через запятую:").split(',')) # делим лист по запятой
-
+names = list(filter(lambda x: x != '', names))
 if len(names) == 0:
     print('No one likes this')
 elif len(names) == 1:
