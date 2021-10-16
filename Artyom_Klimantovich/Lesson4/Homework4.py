@@ -17,8 +17,8 @@ list_name2 = ' '.join(list_name)
 print(list_name2)
 #4
 list1 = ['1','2','3','4','5','6','7','8','9','10']
-list1.insert(3, 33)
-list1.remove('6')
+list1.insert(2, 33)
+del list1[6]
 print(list1)
 #5.1
 a = { 'a': 1, 'b': 2, 'c': 3}
@@ -31,10 +31,10 @@ print(a)
 #5.3
 print(all(a.values()))
 #5.4
-b =['',{}]
 print(not all(a.values()))
 #5.5
-print(sorted(a.items(), reverse=True))
+for k, v in sorted(a.items(), reverse=True):
+    print(k, v)
 #5.6
 a['d']=13
 print(a)
