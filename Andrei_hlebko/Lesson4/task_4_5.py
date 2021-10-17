@@ -27,8 +27,9 @@ print("4(2)-",zna4_empty[0] in slovar_a.values() or zna4_empty[1] in slovar_a.va
       in slovar_all.values()) #4 - версия с list
 
 
-print(sorted(slovar_a.items(), reverse=True))#5
+for i, l in sorted(slovar_a.items(), reverse=True): #5
+      print(i, l)
 
 
 slovar_a['b'] = 222#6
-print(slovar_a)#6
+print(slovar_a.values())#6
