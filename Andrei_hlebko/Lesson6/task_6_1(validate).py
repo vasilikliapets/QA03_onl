@@ -5,9 +5,9 @@
 
 def validate(kart_numb):
     """
-    This Function check credict card validate
+    This Function check credit card validate
     """
-
+    print(type(kart_numb))
     if len(str(kart_numb)) < 15 or not str(kart_numb).isdigit():
         return False
     else:
@@ -18,5 +18,9 @@ def validate(kart_numb):
         return sum(c + u2) % 10 == 0  # Результат суммы без остатка делится на 10, тогда True
 
 
+
 print(validate(4561261212345464))
 print(validate(4561261212345467))
+
+num_karty = input("Введите номер карты: ")
+print(validate(num_karty))
