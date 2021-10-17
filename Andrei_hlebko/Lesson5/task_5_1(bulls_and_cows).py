@@ -23,7 +23,7 @@ def the_game(comp_chislo):
               f"Продолжаем игру...")
         the_game(comp_chislo)
     elif bull == 4:
-        return print((f"Вы выиграли! Загаданное число было: {comp_chislo}. Количество быков: {bull}! Поздравляем!"))
+        return print((f"Вы выиграли! Количество быков: {bull}! Поздравляем!"))
 
 
 name_igrok = input("Игрок, введите ваше имя: ")
