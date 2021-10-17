@@ -12,9 +12,10 @@ print(a, b)
 # 2) Дан список: [‘Ivan’, ‘Ivanou’], и 2 строки: Minsk, Belarus
 # Напечатайте текст: “Привет, Ivan Ivanou! Добро пожаловать в Minsk Belarus”
 a = ["Ivan", "Ivanou"]
-b = "Minsk Belarus"
+b = "Minsk"
+c = "Belarus"
 a = " ".join(a)
-print("Привет,", a, "! Добро пожаловать в", b)
+print("Привет,", a, "! Добро пожаловать в", b, c)
 
 # 3) Дан список ["I", "love", "arrays", "they", "are", "my", "favorite"] сделайте из него строку
 # => "I love arrays they are my favorite"
@@ -24,7 +25,7 @@ print(" ".join(list_1))
 # 4) Создайте список из 10 элементов, вставьте на 3-ю позицию новое значение, удалите элемент из списка под индексом 6
 list_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 list_2.insert(2, "s")
-list_2.remove(6)
+list_2.remove(7)
 print(list_2)
 # 5) Есть 2 словаря
 #                  a = { 'a': 1, 'b': 2, 'c': 3}
