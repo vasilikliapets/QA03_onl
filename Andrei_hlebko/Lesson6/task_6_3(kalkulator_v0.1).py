@@ -12,10 +12,10 @@ def calculator(chislo1, chislo2, oper):
     elif oper == "3":
         return chislo1 * chislo2
     elif oper == "4":  # +проверка деления на 0
-        if chislo1 == 0 or chislo2 == 0:
+        if chislo2 == 0:
             return "Деление на 0!"
         else:
-            return f"Частное (целочисленное деление): {chislo1 // chislo2}, Остаток: {chislo1 % chislo2}"
+            return f"Частное (деление): {chislo1 / chislo2}, Остаток: {chislo1 % chislo2}"
     else:
         print("Выберите из предложенного списка")
 
