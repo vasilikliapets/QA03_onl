@@ -39,7 +39,8 @@ print(all(a.values()))
 print(any(a))
 
 #5.5 Отсортировать словарь по алфавиту в обратном порядке
-print(sorted(a.items(), reverse=True))
+for k, v in sorted(a.items(), reverse=True):
+    print(k, v)
 
 #5.6
 a['d'] = 5
@@ -48,7 +49,7 @@ print(a)
 #6 Создать список из элементов list_a = [1,2,3,4,4,5,2,1,8]
 list_a = [1,2,3,4,4,5,2,1,8]
 #a Вывести только уникальные значения и сохранить их в отдельную переменную
-list_x = set(list_a)
+list_x = list(set(list_a))
 print("уникальные значения:", list_x)
 
 #b Добавить в полученный объект значение 22
