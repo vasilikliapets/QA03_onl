@@ -40,34 +40,44 @@ for i, item in enumerate(str_4):
 print(a)
 
 #5
-str_3 = ['a', 'a', 'a']
-a = str_3[0]
+str_3 = []
+answer = 'True'
 for i in str_3:
-    a, i = i ,a
-    if i == a:
+    str_3, i = i ,str_3
+    if i == str_3:
         answer = 'True'
     else:
         answer = 'False'
 print(answer)
 
 #6
-i = True
+i = 'True'
 b = []
 str_1 = 'dogcat'
 for i in str_1:
-    a = i 
+    a = i
     i = i.islower()
     if i == False:
         b.append(a)
+for i in str_1:
+    a = i
+    i = i.islower()
+    if i == False:
+        break
 print(i, b)
 
 str_2 = 'doGCat'
 b = []
 for i in str_2:
-    a = i 
+    a = i
     i = i.islower()
     if i == False:
         b.append(a)
+for i in str_2:
+    a = i
+    i = i.islower()
+    if i == False:
+        break
 print(i, b)
 
 #7
