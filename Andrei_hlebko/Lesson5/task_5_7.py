@@ -10,6 +10,9 @@ for i in spis2:
     x += i
 print(x)
 
+print(sum(spis2))
+print(sum(range(101)))
+
 
 #Цикл For с range
 x = 0
