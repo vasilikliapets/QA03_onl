@@ -3,27 +3,27 @@ import random
 
 def create_igrok_chislo():
     igrok_chislo = input(f"Игрок {name_igrok},введи 4-значное число с неповторяющимися цифрами: ")
-    return igrok_chislo#Возвращает число которое ввел пользователь
+    return igrok_chislo  # Возвращает число которое ввел пользователь
+
 
 def the_game(comp_chislo):
     bull = 0
     cow = 0
-    result = False
     igrok_chislo = create_igrok_chislo()
-    print(comp_chislo)
-    if bull+cow < 4:  # пока количество коров и быков не равно 4
-        for i in range(len(igrok_chislo)):
-            for l in range(len(comp_chislo)):
-                if igrok_chislo[i] == comp_chislo[l]:
-                    if i == l:
-                        bull += 1
-                    else:
-                        cow += 1
+    for i in range(len(igrok_chislo)):
+        for l in range(len(comp_chislo)):
+            if igrok_chislo[i] == comp_chislo[l]:
+                if i == l:
+                    bull += 1
+                else:
+                    cow += 1
+    if bull < 4:
         print(f"К сожалению {name_igrok}, Вы не угадали, Количество быков: {bull}, количество коров {cow}. "
-              f"Продолжаем...")
+              f"Продолжаем игру...")
         the_game(comp_chislo)
-    elif bull+cow == 4:
-        print((f"Вы выиграли! Количество быков: {bull}, количество коров {cow}"))
+    elif bull == 4:
+        return print((f"Вы выиграли! Количество быков: {bull}! Поздравляем!"))
+
 
 comp_chislo = ""
 while len(comp_chislo) < 4:
@@ -34,17 +34,5 @@ while len(comp_chislo) < 4:
         comp_chislo += zna4
 
 name_igrok = input("Введите ваше имя: ")
-#igrok_chislo = create_igrok_chislo()
 
-print(the_game(comp_chislo))
-
-
-
-
-
-
-
-
-
-
-
+the_game(comp_chislo)
