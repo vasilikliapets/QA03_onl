@@ -6,7 +6,8 @@
 
 list_a = [1,2,3,4,4,5,2,1,8]#1
 
-list_uniq = {*list_a}#2
+#list_uniq = {*list_a}#2
+list_uniq = set(list_a)#2(Такое решение лучше, не злоупотреблять распаковкой(*)
 print(list_uniq)#2
 
 list_uniq.add(22)#3
