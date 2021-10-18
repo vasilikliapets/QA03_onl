@@ -22,7 +22,7 @@ def the_game(comp_chislo):
         print(f"К сожалению {name_igrok}, Вы не угадали, Количество быков: {bull}, количество коров {cow}. "
               f"Продолжаем...")
         the_game(comp_chislo)
-    elif bull+cow == 4:
+    elif bull == 4:
         print((f"Вы выиграли! Количество быков: {bull}, количество коров {cow}"))
 
 comp_chislo = ""
