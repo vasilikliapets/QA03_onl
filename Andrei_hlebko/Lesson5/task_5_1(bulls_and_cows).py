@@ -10,7 +10,6 @@ def the_game(comp_chislo):
     bull = 0
     cow = 0
     igrok_chislo = create_igrok_chislo()
-    print(comp_chislo)  # вывод сгенерированного рандом числа что бы проверить победу.
     for i in range(len(igrok_chislo)):
         for l in range(len(comp_chislo)):
             if igrok_chislo[i] == comp_chislo[l]:

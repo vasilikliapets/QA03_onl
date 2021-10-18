@@ -35,5 +35,4 @@ while len(comp_chislo) < 4:
         comp_chislo += zna4
 
 name_igrok = input("Введите ваше имя: ")
-
 the_game(comp_chislo)
