@@ -39,7 +39,7 @@ print(all(a5.values()))
 print(any(a5.values()))
 
 # 5.5 Отсортировать словарь по алфавиту в обратном порядке
-print(sorted(a5.items(), reverse=True))
+print(dict(sorted(a5.items(), reverse=True)))
 
 # 5.6 Изменить значение под одним из ключей и вывести все значения
 a5['e'] = 5
