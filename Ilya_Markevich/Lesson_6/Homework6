@@ -23,3 +23,11 @@ def calc(variant, pervoe, vtoroe):
         return (pervoe/vtoroe)
 
 print(calc(a, b, c))
+
+# 5 Работа с областями видимости
+my_list = [1, 2, 3]
+def obl_vid():
+ my_list = [1, 2, 3, 'a']
+ print(my_list)
+obl_vid()
+print(my_list)
