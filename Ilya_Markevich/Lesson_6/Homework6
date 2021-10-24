@@ -1,3 +1,12 @@
+#2. Подсчет количества букв
+import collections
+s = input('Введите список символов:')
+c = dict(collections.Counter(s))
+result = ''.join([f'{key.lower()}: {value}' for key, value in c.items()])
+newstr = result.replace(": ", "")
+print(newstr)
+
+
 # Задание 3 Простейший калькулятор v0.1
 print("""Выберите операцию:
       1.Сложение
@@ -31,3 +40,10 @@ def obl_vid():
  print(my_list)
 obl_vid()
 print(my_list)
+
+# 7 Написать пример чтобы hash от объекта 1 и 2 были одинаковые, а id разные.
+a = 5
+b = 5.0
+
+print(id(a), id(b))
+print(hash(a), hash(b))
