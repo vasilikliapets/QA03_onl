@@ -33,6 +33,22 @@ def calc(variant, pervoe, vtoroe):
 
 print(calc(a, b, c))
 
+#4 Написать функцию с изменяемым числом входных параметров
+def function(a, *args, name=None, **kwargs):
+    """
+    :param a: один позиционный аргумент
+    :param args: переменное количество позиционных аргументов
+    :param name: один именованный аргумент
+    :param kwargs: переменное количество именованных аргументов
+    """
+    sp = {"mandatory_position_argument": a, "additional_position_arguments": args,
+        "mandatory_named_argument": {'name': name}, "additional_named_arguments": kwargs}
+    return sp
+
+result = function(1, 2, 3, name='test', surname='test2', some='something')
+print(result)
+
+
 # 5 Работа с областями видимости
 my_list = [1, 2, 3]
 def obl_vid():
