@@ -117,7 +117,7 @@ check_if_upper('doGCat')
 # если список пустой вернуть 0
 def sum_list(l):
     if not l:
-        print(0)
+        return 0
     else:
-        print(sum(l))
-sum_list([1, 2, 3])
+        return sum(l)
+print(sum_list([1, 2, 3]))
