@@ -46,3 +46,28 @@ print(a)
 print(all(a.values()))
 
 #5.4
+print(any(a.values()))
+
+#5.5
+print(dict(sorted(a.items(), reverse = True)))
+
+#5.6
+a['b']=10
+print(a)
+
+#6
+list_a=[1,2,3,4,4,5,2,1,8]
+
+#6.a
+print(set(list_a))
+
+#6.b
+list_a.append(22)
+print(list_a)
+
+#6.c
+list_a=tuple(list_a)
+print(type(list_a))
+
+#6.d
+print(len(list_a))
