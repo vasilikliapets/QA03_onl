@@ -71,3 +71,13 @@ print(type(list_a))
 
 #6.d
 print(len(list_a))
+
+#Задачи
+#1.1
+a=10
+b=25
+print('Summ is {c} and diff = {d}'.format(c=a+b, d=a-b))
+
+#1.2
+list_of_children=['Sasha', 'Vasia', 'Nikalai']
+print('First child is {s}, second is {t}, and last one is {r}'.format(s=list_of_children[0],t=list_of_children[1],r=list_of_children[2]))
