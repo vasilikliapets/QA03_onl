@@ -176,13 +176,12 @@ x = [int, 1, 2, list, 'a', (1, 2), False, enumerate]
 
 def check_call(x):
     """
-    This function returns the list of callable objects
+    This function checks the callable objects
     """
-    a = []
     for i in x:
-        if callable(i) is True:
-            a.append(i)
-    return a
+        if callable(i):
+            return True
+    return False
 
 
 print(check_call(x))

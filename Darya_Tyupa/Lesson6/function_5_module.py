@@ -3,6 +3,6 @@ def change_list(a):
     """
     This function returns new changed list
     """
-    changed_list = a[:]
-    changed_list.append('a')
-    return changed_list
+    a_new = a[:]
+    a_new.append('a')
+    return a_new
