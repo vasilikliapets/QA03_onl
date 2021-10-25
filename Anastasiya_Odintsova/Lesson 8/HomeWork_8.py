@@ -15,7 +15,20 @@ def my_precious():
 my_precious()
 
 # 2 Напишите функцию декоратор, которая добавляет 1 к заданному числу
+def func_1 (func):
+    def wrapper (*args):
+        result = func(*args)+1
+        return result
+    return wrapper
 
+
+@func_1
+def summa(x):
+    x=5
+    return x
+
+b = summa(4)
+print(b)
 
 # 3 Напишите функцию декоратор, которая переводит полученный текст в верхний регистр
 
