@@ -9,6 +9,8 @@ while True:
     y = input("Введите 4-х значное число: ")  # ввод числа
     b = 0
     c = 0  # создание переменных для Bulls и Cows
+    if len(y) != 4:
+        continue
     for i in range(4):
         if x[i] == y[i]:  # проверка наличия цифры месте
             b += 1  # если цифра на месте, то +1 бык
@@ -32,6 +34,7 @@ elif len(names) == 4:
     print(f'{names[0]}, {names[1]} and 2 others like this')
 else:
     print(f'No one likes this')
+    
 # 3. Написать программу, которая перебирает последовательность от 1 до 100. Для чисел кратных 3 она должна написать:
 # "Fuzz" вместо печати числа, для чисел кратных 5 печатать "Buzz", для чисел кратных 3 и 5 надо печатать "FuzzBuzz".
 # Иначе печатать число.
@@ -46,17 +49,11 @@ for i in range(1, 100):
         print(i)
 
 # 4. Нумерация строк в списках. Нумерация должна начинатся с 1, иметь “:” и пробел
-l41 = []
-l42 = ["a", "b", "c"]
+l41 = ["a", "b", "c"]
 length = len(l41)
 for i in range(length):
     l41[i] = str(i + 1) + ":" + l41[i]
 print(l41)
-
-length = len(l42)
-for i in range(length):
-    l42[i] = str(i + 1) + ":" + l42[i]
-print(l42)
 
 # 5. Проверить, все ли элементы одинаковые
 l51 = [1, 1, 1]
@@ -69,15 +66,7 @@ print(all(i == l53[0] for i in l53))
 print(all(i == l54[0] for i in l54))
 
 # 6. В данной подстроке проверить все ли буквы в строчном регистре или нет и вернуть список не подходящих.
-str6 = 'dogcat'
-if str6.lower() in str6:
-    a = [i for i in str6 if i.isupper()]
-    print(True, a)
-else:
-    a = [i for i in str6 if i.isupper()]
-    print(False, a)
-
-str6 = 'doGCat'
+str6 = input('Введите слово: ')
 if str6.lower() in str6:
     a = [i for i in str6 if i.isupper()]
     print(True, a)
