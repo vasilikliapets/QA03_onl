@@ -4,10 +4,7 @@ str = input('Введите строку: ')
 wrong_letter = []
 
 for i in range(0, len(str)):
-    if str[i].islower():
-        i = i + 1
-    else:
+    if str[i].isupper():
         wrong_letter = wrong_letter + list(str[i])
-        i = i + 1
 
 print(len(wrong_letter) == 0, wrong_letter)
