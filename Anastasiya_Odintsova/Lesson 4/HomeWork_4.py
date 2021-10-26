@@ -81,3 +81,17 @@ print('Summ is {c} and diff = {d}'.format(c=a+b, d=a-b))
 #1.2
 list_of_children=['Sasha', 'Vasia', 'Nikalai']
 print('First child is {s}, second is {t}, and last one is {r}'.format(s=list_of_children[0],t=list_of_children[1],r=list_of_children[2]))
+
+#2.2
+#Убрать все символы кроме букв
+s='123 When I consider every thing that grows Holds in perfection but a little moment  That this huge stage presenteth nought but shows Whereon the stars in secret influence comment;'
+s1="".join(c for c in s if c.isalpha())
+print (s1)
+
+#все буквы перевести в нижний регистр
+s1=s1.lower()
+print(s1)
+
+import collections
+results = collections.Counter(s1)
+print(min(results, key=results.get))
