@@ -1,0 +1,13 @@
+def bank(a: int, years: int)-> int:
+    '''
+    Данная фунция вычисляет размер депозита исходя из количества лет
+    '''
+    vklad = a
+    for i in range(years):
+        vklad += vklad * 0.1
+    return (print(f'Через {years} года у вас будет {vklad} деняк'))
+    
+a = int(input('Введите сумму вклада:'))
+years = int(input('Введите количество лет:'))
+
+print(bank(a, years))
