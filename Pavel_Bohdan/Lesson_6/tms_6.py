@@ -39,8 +39,7 @@ def letters_in_a_row(str_1):
                 in_a_row = 1
     if in_a_row > 1:
         result.append(in_a_row)
-    result = list(map(str, result))
-    result = ''.join(result)
+    result = ''.join(map(str, result))
     return result
     
 print(letters_in_a_row(str_1))
@@ -151,11 +150,11 @@ def call_able(x):
     """
     Функция, которая проверяет есть ли в списке объект, которые можно вызвать
     """
+    resultat = False
     for i in x:
         if callable(i) == True:
-            print('True') 
-        else:
-            print('False')
-    return 
+            resultat = True
+            
+    return resultat
 
-call_able([None, str])
+print(call_able([None, str]))
