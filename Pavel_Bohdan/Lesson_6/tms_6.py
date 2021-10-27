@@ -19,19 +19,30 @@ print("Прошел проверку: ", luhn('4561 2612 1234 5467'))
 
 #2
 
-str_1 = "abeehhhhhccced"    
-Count_1 = Counter(str_1)
-Count_2 = Count_1.most_common()
-lst_1 = [list(i) for i in Count_2]
-lst_2 = []
-for i in lst_1:
-    for j in i:
-        lst_2.append(j)
-lst_3 = [str(i) for i in lst_2]
-str_2 = ''.join(lst_3)
-if '1' in str_2:
-    str_2 = str_2.replace('1', '')
-print(str_2) # вывод не идентичен требуемому, но считает правильно + упорядочивает по убыванию))
+str_1 = "abeehhhhhccced" 
+
+def count_letters(a):
+    """Считает количество букв в строке и выводит числа за буквами"""
+    count = 1  # Счетчик для букв
+    result = [a[0]]  # Итоговый лист, куда падают пары БукваЧисло
+    for i in range(0, len(a) - 1):
+        if a[i] == a[i+1]:
+            # если элемент равен следующему, то плюсуем в счетчик
+            count += 1
+        else:
+            if count == 1:
+                # Если элемент не равен, то не пишем единицу, докидываем букву, сбрасываем счетчик
+                result.append(a[i + 1])
+                count = 1
+            else:
+                # Докидываем количество букв, докидываем следующую букву, сбрасываем счетчик
+                result.append(count)
+                result.append(a[i+1])
+                count = 1
+    if count > 1:
+        result.append(count)  # Докидываем число последней буквы
+    result = ''.join(str(i) for i in result)  # из листа делаем строку без пробелов
+    return print(result)
 
 
 #3
@@ -65,14 +76,18 @@ def div(x, y):
         print('На 0 делить нельзя') 
 
 opr = int(input('Введите номер пункта меню: '))
+first_number = int(input("Введите первое число: "))
+second_number = int(input("Введите второе число: "))
 if opr == 1:
-    print('Сумма:', plus(int(input("Введите первое число: ")), int(input("Введите второе число: "))))
+    print('Сумма:', plus(first_number, second_number))
 elif opr == 2:
-    print('Разница:', minus(int(input("Введите первое число: ")), int(input("Введите второе число: "))))
+    print('Разница:', minus(first_number, second_number))
 elif opr == 3:
-    print('Произведение:', multi(int(input("Введите первое число: ")), int(input("Введите второе число: "))))
+    print('Произведение:', multi(first_number, second_number))
 elif opr == 4:
-    print('Частное:', div(int(input("Введите первое число: ")), int(input("Введите второе число: "))))
+    print('Частное:', div(first_number, second_number))
+else:
+    print('Ввели неверный номер пункта')
 
 
 #4
@@ -81,7 +96,7 @@ def function(a, *args, name = 'None', **kwargs):
     Функция с изменяемым числом входных параметров
     """
     
-    dict_1 = {'mandatory_position_argument': a, 'additional_position_arguments': tuple(args), 'mandatory_named_argument': {'name':'test2'}, 'additional_named_arguments': kwargs}
+    dict_1 = {'mandatory_position_argument': a, 'additional_position_arguments': args, 'mandatory_named_argument': {'name':'test2'}, 'additional_named_arguments': kwargs}
     return dict_1
 
 result = function(1, 2, 3, name = 'test', surname = 'test2', some = 'something')
@@ -94,9 +109,10 @@ def changes(my_list):
     """
     Функция возвращает измененный список и не изменяет исходный
     """
-    my_list.append('a')
-    return my_list
-
+    chenged_list = my_list[:]
+    chenged_list.append('a')
+    return chenged_list
+    
 print(my_list)
 print(changes(my_list))
 
@@ -117,7 +133,9 @@ def counter_1(x):
             b = b + 1
         elif isinstance(i, tuple) == True:
             c = c + 1
-    return print({'int':a, 'str':b, 'tuple':c})
+    r = {'int':a, 'str':b, 'tuple':c}
+    return r 
+
 lst_4 = [1, 2, 'a', (1, 2), 'b']
 print(counter_1(lst_4))
 
@@ -131,14 +149,17 @@ print(hash(b), id(b))
 
 #8
 
-def call(x):
+def call_able(x):
     """
     Функция, которая проверяет есть ли в списке объект, которые можно вызвать
     """
+    resultat = False
     for i in x:
         if callable(i) == True:
-            print(f'{i} is collable') 
-    return
+            resultat = True
+    return resultat
+             
+    
 
-call([int, str])
+print(call_able([None, str]))
 
