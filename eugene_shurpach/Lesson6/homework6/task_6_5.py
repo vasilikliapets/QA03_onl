@@ -1,12 +1,12 @@
-My_list = [1, 2, 3]
+my_list = [1, 2, 3]
 
-def change_list(My_list):
+def change_list(my_list):
     """создает копию листа с возможностью редактировать без редактирования начального листа"""
-    my_list_2 = My_list[:]
+    my_list_2 = my_list[:]
     my_list_2.append("a")
     return my_list_2
 
 
-Changed_list = change_list(My_list)
-print(My_list)
-print(Changed_list)
+changed_list_var = change_list(my_list)
+print(my_list)
+print(changed_list_var)
