@@ -1,4 +1,4 @@
-def Luhn(card):
+def luhn(card):
     checksum = 0
     # Переводим номер карточки из строки в массив чисел
     cardnumbers = list(map(int, card))
@@ -23,4 +23,4 @@ number = input("Введите номер карты: ")
 if number.isdigit():
     print("Номер карты должен содержать цифры")
 else:
-    print(Luhn(number))
+    print(luhn(number))
