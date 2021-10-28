@@ -5,10 +5,10 @@ def function_argum(a1, *args, name=None, **kwargs):
     dicts = {
         "mandatory_position_argument": a1
     }
-    if args != ():
+    if args != {}:
         dicts["additional_position_arguments"] = args
     dicts["mandatory_named_argument"] = {'name': name}
-    if kwargs != ():
+    if kwargs != {}:
         dicts["additional_named_arguments"] = kwargs
 
     return dicts
