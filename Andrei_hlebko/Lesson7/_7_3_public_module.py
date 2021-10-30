@@ -3,6 +3,7 @@ import random
 import _7_1_bank_deposit as L7_bank_dep
 import _7_2_shifr_cezar as L7_shfr_ces
 
+
 def second_game():
     vybor = int(input("""
             Хотите сыграть в другую игру?
@@ -17,6 +18,7 @@ def second_game():
         L7_shfr_ces.start_shifr()
     else:
         print("Вы ввели неправильно число!")
+
 
 attempts = 3
 flag = True
@@ -39,9 +41,7 @@ while flag:
             break
         else:
             attempts -= 1
-        print("Вы ввели неправильно число!")
+            print("Вы ввели неправильно число!")
     else:
         flag = False
         random.choice([L7_bank_dep.start_bank, L7_shfr_ces.start_shifr])()
-
-
