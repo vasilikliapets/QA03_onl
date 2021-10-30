@@ -2,18 +2,20 @@ import game
 import shifr_cezar
 import random
 
-count = 0  # переменная для подсчёта ошибок
-
 
 def choice():
-    '''
-    This function describes the choice of programs
-    '''
-    global count
     var = int(input('''Выберите программу:
-    1) Крестики-нолики
-    2) Шифр Цезаря
-    '''))
+        1) Крестики-нолики
+        2) Шифр Цезаря
+        '''))
+    return var
+
+
+count = 0  # переменная для подсчёта ошибок
+
+flag = True
+while flag:
+    var = choice()
     if var == 1:  # если выбрал крестики-нолики
         game.main()
         case = int(input('''
@@ -24,6 +26,7 @@ def choice():
             shifr_cezar.main()
         else:
             print('Конец сеанса')
+            break
     elif var == 2:  # если выбрал шифровальщика
         shifr_cezar.main()
         case = int(input('''
@@ -34,15 +37,13 @@ def choice():
             game.main()
         else:
             print('Конец сеанса')
+            break
     else:
         if count < 2:  # если ввёл не ту цифру из меню
             print('Вы совершили ошибкую. Повторите выбор')
             count += 1
-            choice()
         else:
             f = [game.main, shifr_cezar.main]  # рандомный запуск одной из двух программ
             rand_func = random.choice(f)
             rand_func()
-
-
-choice()
+            flag = False

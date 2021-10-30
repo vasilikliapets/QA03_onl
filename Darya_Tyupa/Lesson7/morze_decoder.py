@@ -25,7 +25,9 @@ def morse(phrase):
     result = ''
     for i in phrase:
         try:
-            result += morze_dict.get(list(alphabet_dict.keys())[list(alphabet_dict.values()).index(i)])
+            key_i = list(alphabet_dict.values()).index(i)  # находим ключ символа
+            morze_value = morze_dict.get(key_i)  # находим значение морзе
+            result += morze_value
         except ValueError:
             result += i
     print(result)
