@@ -28,7 +28,7 @@ def encode(phrase, offset):
     encoded_element_index = 0
 
     # Создаем строку, содержащую значения алфавита, с помощью модуля string
-    alphabet = string.ascii_lowercase
+    alphabet = string.ascii_letters
 
     # Узнаем длину alphabet для дальнейшего использования в сценариях,
     # когда буквы после смещения выходят за рамки значений в alphabet
@@ -50,7 +50,7 @@ def encode(phrase, offset):
 
             # Записываем значения, полученные в результате шифрования
             encoded_phrase += alphabet[encoded_element_index]
-    return encoded_phrase
+    return encoded_phrase.lower()
 
 
 def decode(phrase, offset):
@@ -63,7 +63,7 @@ def decode(phrase, offset):
     decoded_phrase = ''
 
     # Создаем строку, содержащую значения алфавита, с помощью модуля string
-    alphabet = string.ascii_lowercase
+    alphabet = string.ascii_letters
 
     # Узнаем длину alphabet для дальнейшего использования в сценариях,
     # когда буквы после смещения выходят за рамки значений в alphabet
@@ -85,7 +85,7 @@ def decode(phrase, offset):
 
                 # Записываем значения, полученные в результате расшифровки
         decoded_phrase += alphabet[decoded_element_index]
-    return decoded_phrase
+    return decoded_phrase.lower()
 
 
 def change_index_to_correct(changed_element_index, alphabet):
