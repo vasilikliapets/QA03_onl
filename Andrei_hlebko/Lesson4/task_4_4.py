@@ -4,5 +4,4 @@
 spis_10 = [5,4,17,13,4,16,7,1,2,22]
 spis_10.insert(2,222)
 del spis_10[6]
-spis_10.insert(2,200)
 print(spis_10)
