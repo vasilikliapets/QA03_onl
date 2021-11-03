@@ -1,0 +1,25 @@
+# Шифр Цезаря
+alfavit_EU =  'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
+alfavit_RU = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
+smeshenie = int(input('Шаг шифровки: '))
+message = input("Сообщение: ").upper()
+itog = ''
+lang = input('Выберите вариант: 1.Encode 2.Decode ')
+
+if lang == '1':
+    for i in message:
+        mesto = alfavit_RU.find(i)
+        new_mesto = mesto - smeshenie
+        if i in alfavit_RU:
+            itog += alfavit_RU[new_mesto]
+        else:
+            itog += i
+else:
+    for i in message:
+        mesto = alfavit_EU.find(i)
+        new_mesto = mesto + smeshenie
+        if i in alfavit_EU:
+            itog += alfavit_EU[new_mesto]
+        else:
+            itog += i
+print (itog)
