@@ -18,21 +18,31 @@ print("Прошел проверку: ", luhn('4561 2612 1234 5467'))
 
 
 #2
+str_1 = "cccbba"
 
-str_1 = "abeehhhhhccced"    
-Count_1 = Counter(str_1)
-Count_2 = Count_1.most_common()
-lst_1 = [list(i) for i in Count_2]
-lst_2 = []
-for i in lst_1:
-    for j in i:
-        lst_2.append(j)
-lst_3 = [str(i) for i in lst_2]
-str_2 = ''.join(lst_3)
-if '1' in str_2:
-    str_2 = str_2.replace('1', '')
-print(str_2) # вывод не идентичен требуемому, но считает правильно + упорядочивает по убыванию))
-
+def letters_in_a_row(str_1):
+    """
+    Функция высчитывает количество букв написаных подряд
+    """
+    in_a_row = 1  
+    result = [str_1[0]]
+    for i in range(0, (len(str_1) - 1)):
+        if str_1[i] == str_1[i+1]:
+            in_a_row += 1
+        else:
+            if in_a_row == 1:
+                result.append(str_1[i + 1])
+                in_a_row = 1
+            else:
+                result.append(in_a_row)
+                result.append(str_1[i+1])
+                in_a_row = 1
+    if in_a_row > 1:
+        result.append(in_a_row)
+    result = ''.join(map(str, result))
+    return result
+    
+print(letters_in_a_row(str_1))
 
 #3
 #Калькулятор
@@ -65,23 +75,27 @@ def div(x, y):
         print('На 0 делить нельзя') 
 
 opr = int(input('Введите номер пункта меню: '))
-if opr == 1:
-    print('Сумма:', plus(int(input("Введите первое число: ")), int(input("Введите второе число: "))))
-elif opr == 2:
-    print('Разница:', minus(int(input("Введите первое число: ")), int(input("Введите второе число: "))))
-elif opr == 3:
-    print('Произведение:', multi(int(input("Введите первое число: ")), int(input("Введите второе число: "))))
-elif opr == 4:
-    print('Частное:', div(int(input("Введите первое число: ")), int(input("Введите второе число: "))))
-
+x = int(input("Введите первое число: "))
+y = int(input("Введите второе число: "))
+if 1<= opr <= 4:
+    if opr == 1:
+        print('Сумма:', plus(x, y))
+    elif opr == 2:
+        print('Разница:', minus(x, y))
+    elif opr == 3:
+        print('Произведение:', multi(x, y))
+    elif opr == 4:
+        print('Частное:', div(x, y))
+else:
+    print('Такого пункта в меню не существует')
 
 #4
 def function(a, *args, name = 'None', **kwargs):
     """
     Функция с изменяемым числом входных параметров
     """
-    
-    dict_1 = {'mandatory_position_argument': a, 'additional_position_arguments': tuple(args), 'mandatory_named_argument': {'name':'test2'}, 'additional_named_arguments': kwargs}
+   
+    dict_1 = {'mandatory_position_argument': a, 'additional_position_arguments': args, 'mandatory_named_argument': {'name':'test2'}, 'additional_named_arguments': kwargs}
     return dict_1
 
 result = function(1, 2, 3, name = 'test', surname = 'test2', some = 'something')
@@ -94,8 +108,9 @@ def changes(my_list):
     """
     Функция возвращает измененный список и не изменяет исходный
     """
-    my_list.append('a')
-    return my_list
+    changed_list = my_list[:]
+    changed_list.append('a')
+    return changed_list
 
 print(my_list)
 print(changes(my_list))
@@ -130,15 +145,15 @@ print(hash(b), id(b))
 
 
 #8
-
-def call(x):
+def call_able(x):
     """
     Функция, которая проверяет есть ли в списке объект, которые можно вызвать
     """
+    resultat = False
     for i in x:
         if callable(i) == True:
-            print(f'{i} is collable') 
-    return
+            resultat = True
+            
+    return resultat
 
-call([int, str])
-
+print(call_able([None, str]))
