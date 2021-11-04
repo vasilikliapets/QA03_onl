@@ -37,18 +37,13 @@ print(a)
 print(all(a.values()))
 
 #5.4
-print(not all(a.values()))
+print(None or 0 or '' in a.values())
 
 #5.5
-lst_4 = []
-lst_5 = []
-for k, v in a.items():
-    lst_4.append(k)
-    lst_5.append(v)
-lst_4.reverse()
-lst_5.reverse()
-d = dict(zip(lst_4, lst_5) )
-print(d)
+from collections import OrderedDict
+d = OrderedDict(a)
+for k, v in d.items():
+    print(k, v)
 
 #5.6
 a['b'] = 89
@@ -64,7 +59,7 @@ st_1.add(22)
 print(st_1)
 
 #6.c
-list_a = tuple(list_a)  #перевел List в tuple, тем самым сделал его неизменяемым
+list_a = str(list_a)  #перевел List в Str, тем самым сделал его неизменяемым
 print(type(list_a))  
 
 #6.d
@@ -83,5 +78,3 @@ print('Summ is {sum} and diff = {dif}'.format(sum = a + b, dif = a - b))
 #2)
 list_of_children = ['Sasha', 'Vasia', 'Nikalai']
 print(f'First child is {list_of_children[0]}, second is {list_of_children[1]}, and last one - {list_of_children[2]}')
-
-
