@@ -37,5 +37,5 @@ while user_choise.isdigit():
         break
     elif user_choise not in ['1', '2']:
         print("Не очень похоже на цифру! Попробуй еще раз")
-        user_choise = input(f"Выберите программу для проверки:\n1 - Фиббонатор\n2 - Математика\n3 - Случайный выбор\n")
+        user_choise = input(f"Выберите программу для проверки:\n1 - Фиббонатор\n2 - Математика\n")
         continue
