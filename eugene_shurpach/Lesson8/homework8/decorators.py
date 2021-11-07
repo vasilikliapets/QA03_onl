@@ -18,7 +18,7 @@ def func_2(func):
 
     def wrapper(*args):
         result = func(*args) + 1
-        return print(result)
+        return result
 
     return wrapper
 
@@ -38,7 +38,7 @@ def func_name(func):
     def wrapper(*args):
         a = func.__name__  # Встроенный метод по возврату имени функции
         func(*args)
-        return print(a)
+        return a
 
     return wrapper
 
