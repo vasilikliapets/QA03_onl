@@ -21,6 +21,7 @@ def caching(timeout):  # декоратор принимающий значен�
                 var_1 = func(*args)
                 print(var_1)
                 end_time = time.time()
+            return var_1
 
         return wrapper
 
@@ -35,8 +36,7 @@ def summa(a, b):
     return a + b
 
 
-summa(2, 4)
-time.sleep(2)
-summa(2, 4)
-time.sleep(5)
-summa(2, 4)
+x = summa(270, 5)
+assert x is summa(270, 5)
+time.sleep(4)
+assert x is not summa(270, 5)
