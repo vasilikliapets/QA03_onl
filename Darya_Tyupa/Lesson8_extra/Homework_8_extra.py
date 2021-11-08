@@ -25,6 +25,7 @@ def caching(timeout):
                 result = func(x)
                 print(result)
                 end_time = time.time()
+            return result
 
         return wrapper
 
