@@ -5,42 +5,45 @@
 import time
 
 
-def caching(timeout):
-    '''
-    This function-decorator is casing the result of decorated function
-    '''
+def caching(timeout):  # декоратор принимающий значение
+    """Кэширование результатов функции"""
+    timeout = timeout
 
-    def decorator(func):
+    def my_decorator(func):
         end_time = 0
-        result = 0
+        var_1 = 0
 
-        def wrapper(x):
+        def wrapper(*args):
             nonlocal end_time
-            nonlocal result
+            nonlocal var_1
+            nonlocal timeout
             start = time.time()
             a = abs(end_time - start)
             if a < timeout:
-                print(f"Кэш: {result}")
+                print(f"Кэш: {var_1}")
             else:
-                result = func(x)
-                print(result)
+                var_1 = func(*args)
+                print(var_1)
                 end_time = time.time()
+            return var_1
 
         return wrapper
 
-    return decorator
+    return my_decorator
 
 
-@caching(timeout=3)
-def func(x):
-    return {x: 42}
+timeout = int(input("Введите таймаут в секундах: "))
 
 
-func(2)
-time.sleep(2)
-func(2)
-time.sleep(5)
-func(2)
+@caching(timeout=timeout)
+def summa(a, b):
+    return a + b
+
+
+x = summa(270, 5)
+assert x is summa(270, 5)
+time.sleep(4)
+assert x is not summa(270, 5)
 
 # TASK 2 -Реализуйте лямбда функцию, которая будет сортировать список по убыванию и возвращать его
 spisok_task2 = lambda x: sorted(x)[::-1]
