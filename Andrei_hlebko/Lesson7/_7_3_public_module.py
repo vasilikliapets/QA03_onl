@@ -43,5 +43,3 @@ while flag:
     else:
         flag = False
         random.choice([L7_bank_dep.start_bank, L7_shfr_ces.start_shifr])()
-
-
