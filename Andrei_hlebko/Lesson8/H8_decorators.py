@@ -21,10 +21,9 @@ def add_1(func):
     This function add 1 to your int value
     """
 
-    @functools.wraps(func)
     def wrapper(x):
-        func(x) + 1
-        return func(x) + 1
+        res = func(x) + 1
+        return res
 
     return wrapper
 
@@ -73,9 +72,9 @@ def change(func):
     The function make reverse your values
     """
 
-    @functools.wraps(func)
-    def wrapper_change(list):
-        return (list[::-1])
+    def wrapper_change(*args):
+        spis = args[::-1]
+        return func(spis)
 
     return wrapper_change
 
