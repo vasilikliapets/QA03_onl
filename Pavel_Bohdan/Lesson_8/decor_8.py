@@ -1,7 +1,8 @@
+import time
 """
 Модуль с декораторами
 """
-import time
+
 
 #1
 def decor_before_after(func):
@@ -10,7 +11,6 @@ def decor_before_after(func):
         print('Before')
         func(*args)
         print('After')
-        return 
 
     return wrapper
 
@@ -21,7 +21,7 @@ def plus_one(func):
     def wrapper(*args):
         s = func(*args)
         result = s + 1
-        return print(result)
+        print(result)
     return wrapper
 
 
@@ -46,10 +46,8 @@ def func_name(func):
 def change(func):
     """Функция меняет порядок принимаемых неименнованых аргументов в обратном порядке"""
     def wrapper(*args):
-        sgra = list(args)
-        sgra = sgra[::-1]
-        s = func(*sgra)
-        return s
+        result = func(args[::-1])
+        return result
     return wrapper
 
 
@@ -61,7 +59,8 @@ def run_timer(func):
         func(*args)
         end_time = time.time()
         run_time = end_time - start_time
-        return print(f'Время выполнения вычислений: {run_time}сек.')
+        print(f'Время выполнения вычислений: {run_time}сек.')
+        return
     return wrapper
 
 
