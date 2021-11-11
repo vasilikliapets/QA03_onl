@@ -10,13 +10,14 @@ def caching(timeout):
             nonlocal time_ref
             nonlocal value
             now = time.time()
-            if now - time_ref < timeout:
+            a = abs(time_ref - now)
+            if a < timeout:
                 print(value)
             else:
                 value = func(*args)
                 print(value)
-                time_ref = now
-            
+                time_ref = time.time()
+            return value
         return wrapper
     return outer_wrapper
     
