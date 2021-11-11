@@ -8,6 +8,9 @@ rus_upper = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
 
 
 def encode(text: str, shifr: int):
+    """
+    Ф-ция кодирования сообщений
+    """
     text_out = ''
     for char in text:
         if char in rus_lower:
@@ -28,6 +31,9 @@ def encode(text: str, shifr: int):
 
 
 def decode(text: str, shifr: int):
+    """
+    Ф-ция декодирования сообщений
+    """
     text_out = ''
     for char in text:
         if char in rus_lower:
@@ -48,6 +54,9 @@ def decode(text: str, shifr: int):
 
 
 def code():
+    """
+    Выбор кодирования/декодирования текста
+    """
     print("Выберите шифрование: encode - 1, decode - 2")
     chifr = input()
     print("Введите ключ шифрования")
@@ -62,4 +71,5 @@ def code():
         print('Неверный выбор')
 
 
-code()
+if __name__ == '__main__':        
+    code()
