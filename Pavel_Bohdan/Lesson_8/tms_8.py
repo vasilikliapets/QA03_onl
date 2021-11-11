@@ -24,9 +24,9 @@ print(insert_variable(3))
 
 #3
 @decor_8.all_letters_capital
-def letters():
+def letters(lett):
     """Функция принимает текс"""
-    return letters()
+    return lett
 
 print(letters('all_letters_capital'))
 
@@ -35,7 +35,7 @@ print(letters('all_letters_capital'))
 @decor_8.func_name
 def you_got_it():
     """Функция с названием:)"""
-    return
+    pass
 
 print(you_got_it())
 
@@ -44,8 +44,7 @@ print(you_got_it())
 @decor_8.change
 def wright_func(*args):
     """Функция выводит введенные аргументы"""
-    result = args
-    return result
+    return args
 
 print(wright_func(1, 3, 5))
 
@@ -56,8 +55,7 @@ print(wright_func(1, 3, 5))
 def test_func(a, b):
     """Функция возводит число в степень"""
     result = a ** b
-    print(f'{a} в степени {b} равно {result}')
-    return 
+    print(f'{a} в степени {b} равно {result}') 
 
 test_func(5, 3)
 
