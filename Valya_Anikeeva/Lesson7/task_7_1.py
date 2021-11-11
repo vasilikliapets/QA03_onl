@@ -6,12 +6,9 @@
 
 def bank(a, years):
     i = 0
-    print("Внесено денег: " + str(a), "сроком на: " + str(years) + " лет")
     while i < years:
         i += 1
         a = a + ((a / 100) * 10)
-        # print("Год " + str(i))
-        # print("Размер вклада " + str(a))
     print("Сумма на счете, по окончанию " + str(i) + " лет: " + str(a))
 
 
@@ -21,4 +18,5 @@ def run_bank():
     bank(sum_, years_)
 
 
-run_bank()
+if __name__ == '__main__':   
+    run_bank()
