@@ -1,2 +1,0 @@
-Artem Kruhlov
-Automation on Python
