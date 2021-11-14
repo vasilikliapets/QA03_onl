@@ -14,8 +14,10 @@ while i < 4:
         code()
         i = 0
         continue
-    elif choise != '1' or choise != '2':
-        print('Данной программы не существует. Повторите попытку.')
+    else:
         i += 1
-        a_choise = random.choice((bank, code))
-        a_choise()
+        print('Данной программы не существует.')
+print('Будет запущена одна из программ.')
+
+a_choise = random.choice((bank, code))
+a_choise()
