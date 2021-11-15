@@ -1,31 +1,3 @@
-# Шифр Цезаря 
-# alfavit_EU =  'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
-# alfavit_RU = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
-# smeshenie = int(input('Шаг шифровки: '))
-# message = input("Сообщение: ").upper()
-# itog = ''
-# lang = input('Выберите вариант: 1.Encode 2.Decode ')
-# 
-# if lang == '1':
-#     for i in message:
-#         mesto = alfavit_RU.find(i)
-#         new_mesto = mesto - smeshenie
-#         if i in alfavit_RU:
-#             itog += alfavit_RU[new_mesto]
-#         else:
-#             itog += i
-# else:
-#     for i in message:
-#         mesto = alfavit_EU.find(i)
-#         new_mesto = mesto + smeshenie
-#         if i in alfavit_EU:
-#             itog += alfavit_EU[new_mesto]
-#         else:
-#             itog += i
-# print (itog)
-
-
-
 RUS1 = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
 RUS2 = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
 LAT1 = 'abcdefghijklmnopqrstuvwxyz'
@@ -33,6 +5,9 @@ LAT2 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 
 def encode(text: str, shift: int):
+    '''
+    Данная фунция преобразует текст в шифр Цезаря
+    '''
     text_out = ''
     for char in text:
         if char in RUS1:
@@ -53,7 +28,9 @@ def encode(text: str, shift: int):
 
 
 def decode(text: str, shift: int):
-
+    '''
+    Данная фунция шифр Цезаря в текст
+    '''
     text_out = ''
     for char in text:
         if char in RUS1:
@@ -74,6 +51,9 @@ def decode(text: str, shift: int):
 
 
 def fun():
+    '''
+    Функция с параметрами для шифра
+    '''
     op = input('Выберите вариант: 1 - Encode, 2 - Decode ')
     text = input('Сообщение: ')
     shift = int(input('Шаг шифровки: '))
@@ -86,4 +66,4 @@ def fun():
 
 
 if __name__ == "__main__":
-    code()
+    fun()
