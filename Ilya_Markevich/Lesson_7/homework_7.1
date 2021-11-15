@@ -5,12 +5,12 @@ def bank(a: int, years: int)-> int:
     vklad = a
     for i in range(years):
         vklad += vklad * 0.1
-    return (print(f'Через {years} года у вас будет {vklad} деняк'))
+    return years, vklad
     
 a = int(input('Введите сумму вклада:'))
 years = int(input('Введите количество лет:'))
 
-print(bank(a, years))
+print(f'Через {years} года у вас будет {vklad} деняк')
 
 if __name__ == 'main':
-    run_bank()
+    bank()
