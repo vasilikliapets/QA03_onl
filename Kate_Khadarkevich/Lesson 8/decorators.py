@@ -49,5 +49,5 @@ def timer(func):
         end_time = time.perf_counter()
         run_time = end_time - start_time
         print('Функция выполнена за:', run_time)
-        return
+        return func(*args)
     return wrapper_timer
