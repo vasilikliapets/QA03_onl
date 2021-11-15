@@ -14,11 +14,11 @@ def mod():
         code()
         var2 = input('Для запуска другой программы введите 1')
         if var2 == '1':
-            bank()
+            bank(a: int, years: int)
         else:
             print('Программа завершена')
     elif var == '2':
-        bank()
+        bank(a: int, years: int)
         var2 = input('Для запуска другой программы введите 1: ')
         if var2 == '1':
             code()
@@ -29,7 +29,7 @@ def mod():
         if count < 3:
             print('Неправильно выбрана программа!')
             count += 1
-            ch()
+            mod()
         else:
             print('Запущена программа, выбранная случайно')
             prog = [code, bank]
