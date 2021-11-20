@@ -46,7 +46,10 @@ class Bouquet:  # букет цветов
         self.bouquet = flowers
 
     def __getitem__(self, index):  # Узнать есть ли цветок в букете по индексу
-        return self.bouquet[index]
+        try:
+            return self.bouquet[index]
+        except:
+            return "К сожалению такого цветка в букете не найдено!"
 
     def price_bouquet(self):  # Вывод Стоимости букета
         total = 0
@@ -75,24 +78,37 @@ class Bouquet:  # букет цветов
             if isinstance(i, Flowers):
                 if i.flower_lenght == lenght:
                     print(i)
+                    break
+            else:
+                print("К сожалению цветка такой длины в букете нету!")
+
 
     def find_flower_by_color(self, color):  # По цвету
         for i in self.bouquet:
             if isinstance(i, Flowers):
                 if i.color == color:
                     print(i)
+                    break
+            else:
+                print("К сожалению цветка такого цвета в букете нету!")
 
     def find_flower_by_fresh(self, fresh):  # По свежести
         for i in self.bouquet:
             if isinstance(i, Flowers):
                 if i.fresh == fresh:
                     print(i)
+                    break
+            else:
+                print("К сожалению цветка такой свежести в букете нету")
 
     def find_flower_by_price(self, price):  # По цене
         for i in self.bouquet:
             if isinstance(i, Flowers):
                 if i.price == price:
                     print(i)
+                    break
+            else:
+                print("К сожалению цветка в такую цену в букете нету")
 
     def __contains__(self, obj):
         return obj in self.bouquet
@@ -162,8 +178,7 @@ bouquet_4 = Bouquet(rose1, cammomile, paper1)  # без фиалок(violet)
 
 
 # # Выводим стоимость букета
-# print(Bouquet.price_bouquet(bouquet_2))-Как правильнее вызывать???
-# print(bouquet_1.price_bouquet())          #или так  правильнее??
+# print(bouquet_1.price_bouquet())
 
 
 # # узнаем есть ли цветок в букете
