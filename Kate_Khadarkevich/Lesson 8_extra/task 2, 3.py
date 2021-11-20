@@ -1,7 +1,7 @@
 # 2. Реализуйте лямбда функцию, которая будет сортировать список по убыванию и возвращать его
-one_list = ['4', '11', '5', '3', '77', '14']
-sorted_list = sorted(one_list, key=lambda x: int(x[0:]))
-print(sorted_list)
+one_list = [4, 11, 5, 3, 7, 14]
+sorteist = lambda x: sorted(x)[::-1]
+print(sorted_list(one_list))
 
 
 # 3. Реализуйте лямбда функцию, которая проверяет есть ли в слове буква 't',
