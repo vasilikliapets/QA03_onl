@@ -2,7 +2,7 @@
 class Book:
     book_count = 0
 
-    def __init__(self, name, author, q_pages, isbn, booking=False, taking=False):
+    def __init__(self, name, author, q_pages, isbn, booking=None, taking=None):
         print("Книга добавлена в библиотеку!")
         Book.book_count += 1
         self.booking = booking
@@ -12,51 +12,51 @@ class Book:
         self.name = name
         self.taking = taking
 
-    pass
-
 
 class User:
     user_count = 0
 
-    def __init__(self, name):
+    def __init__(self, id, name):
+        self.id = id
         self.name = name
 
-    def booking(self, Book):
+    def booking(self, book, user):
         """Бронирование книги пользователем"""
-        if Book.booking is not True and Book.taking is not True:
-            print("Книга зарезервирована!")
-            Book.booking = True
-            return self
-        else:
-            print("Эта книга зарезервирована! Стоит почитать что-нибудь другое.")
+        if book.booking is not None:
+            if book.booking != user.id:
+                print(f"Книга {book.name} зарезервирована! Стоит почитать что-нибудь другое.")
+        elif book.booking is None and book.taking is None:
+            print(f"Книга {book.name} вами зарезервирована!")
+            book.booking = user.id
 
-    def taking(self, Book):
+    def taking(self, book, user):
         """Пользователь берет книгу"""
-        if Book.taking is not True and Book.booking is not True:
-            print("Книга взята!")
-            Book.taking = True
-            return self
-        else:
-            print("Книги нет в наличии!")
+        if book.taking is None and book.booking in {None, user.id}:
+            print(f"Книга {book.name} успешно взята!")
+            book.taking = user.id
+        elif book.booking != user.id:
+            print(f"Книги {book.name} сейчас нет в наличии или она зарезервирована другим читателем!")
 
-    def returning(self, Book):
+
+    def returning(self, book, user):
         """Пользователь возвращает книгу"""
-        Book.taking = False
-        print("Книга возвращена!")
-        return self
+        if book.taking == user.id:
+            book.booking = None
+            book.taking = None
+            print(f"Книга {book.name} возвращена!")
+        else:
+            print("Нельзя вернуть книгу, которую не брал!")
 
-    pass
 
+b_1 = Book("Остров сокровищ", "Роберт Стивенсон", 154, 5042429921)
+b_2 = Book("book2", "Роберт Стивенсон", 154, 5042429921)
 
-a = Book("Остров сокровищ", "Роберт Стивенсон", 154, 5042429921)  # добавление книги в библиотеку
-# print(a.name)
-
-user = User("Шурпач Евгений")
-# print(user.name)
-# print(Book.book_count)
-
-user_2 = User("Иванов Ванятко")
-
-user_2.taking(a)  # Книга взята!
-
-user.taking(a)  # Книги нет!
+user_1 = User(1, "Шурпач Евгений")
+user_2 = User(2, "Иванов Ванятко")
+user_1.booking(b_1, user_1)
+user_2.taking(b_1, user_2)
+user_2.booking(b_1, user_2)
+user_2.returning(b_1, user_2)
+user_1.taking(b_1, user_1)
+user_1.returning(b_1, user_1)
+user_2.taking(b_1, user_2)
