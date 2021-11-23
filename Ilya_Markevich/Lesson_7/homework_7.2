@@ -1,0 +1,69 @@
+RUS1 = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+RUS2 = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
+LAT1 = 'abcdefghijklmnopqrstuvwxyz'
+LAT2 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+
+def encode(text: str, shift: int):
+    '''
+    Данная фунция преобразует текст в шифр Цезаря
+    '''
+    text_out = ''
+    for char in text:
+        if char in RUS1:
+            i = (RUS1.index(char) + shift) % 33
+            text_out += RUS1[i]
+        elif char in RUS2:
+            i = (RUS1.index(char) + shift) % 33
+            text_out += RUS2[i]
+        elif char in LAT1:
+            i = (LAT1.index(char) + shift) % 26
+            text_out += LAT1[i]
+        elif char in LAT2:
+            i = (LAT2.index(char) + shift) % 26
+            text_out += LAT2[i]
+        else:
+            text_out += char
+    return text_out
+
+
+def decode(text: str, shift: int):
+    '''
+    Данная фунция шифр Цезаря в текст
+    '''
+    text_out = ''
+    for char in text:
+        if char in RUS1:
+            i = (RUS1.index(char) - shift) % 33
+            text_out += RUS1[i]
+        elif char in RUS2:
+            i = (RUS1.index(char) - shift) % 33
+            text_out += RUS2[i]
+        elif char in LAT1:
+            i = (LAT1.index(char) - shift) % 26
+            text_out += LAT1[i]
+        elif char in LAT2:
+            i = (LAT2.index(char) - shift) % 26
+            text_out += LAT2[i]
+        else:
+            text_out += char
+    return text_out
+
+
+def fun():
+    '''
+    Функция с параметрами для шифра
+    '''
+    op = input('Выберите вариант: 1 - Encode, 2 - Decode ')
+    text = input('Сообщение: ')
+    shift = int(input('Шаг шифровки: '))
+    if op == '1':
+        print(encode(text, shift))
+    elif op == '2':
+        print(decode(text, shift))
+    else:
+        print('Неправильно выбрана операция')
+
+
+if __name__ == "__main__":
+    fun()
