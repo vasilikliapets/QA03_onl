@@ -4,7 +4,8 @@ from time import time
 
 def before_and_after_decorator(func):
     """
-
+    The function-decorator prints 'Before' and 'After'
+    and prints the result of decorated function
     """
 
     @wraps(func)
@@ -19,7 +20,8 @@ def before_and_after_decorator(func):
 
 def increment_decorator(func):
     """
-
+    The function-decorator returns the result
+    of decorated function + 1
     """
 
     @wraps(func)
@@ -31,7 +33,8 @@ def increment_decorator(func):
 
 def uppercase_decorator(func):
     """
-
+    The function-decorator converts the received
+    text to uppercase
     """
 
     @wraps(func)
@@ -43,7 +46,8 @@ def uppercase_decorator(func):
 
 def name_decorator(func):
     """
-
+    The function-decorator displays the name
+    of the function
     """
 
     @wraps(func)
@@ -56,7 +60,10 @@ def name_decorator(func):
 
 def reverse_decorator(func):
     """
-
+    The function-decorator makes it so that
+    the decorated function accepts all
+    of its unnamed arguments in the opposite
+    order of what they were passed in
     """
 
     def wrapper(*args, **kwargs):
@@ -67,7 +74,8 @@ def reverse_decorator(func):
 
 def duration_decorator(func):
     """
-
+    The function-decorator that calculates
+    the running time of the function being decorated
     """
 
     @wraps(func)

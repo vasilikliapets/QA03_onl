@@ -5,7 +5,7 @@ import decorators
 @decorators.name_decorator
 def fibonacci(n: int):
     """
-
+    The function calculates and returns the fibonacci number
     """
     a = b = 1
     n = n - 2
@@ -19,7 +19,8 @@ def fibonacci(n: int):
 @decorators.before_and_after_decorator
 def math_expression():
     """
-
+    The function returns the result of
+    the mathematical expression
     """
     return 7 * (12 ** (2 + 1) // (4 - 1)) / ((2 + 4) * 2) - (3 * 110 + 6)
 
@@ -27,7 +28,8 @@ def math_expression():
 @decorators.reverse_decorator
 def args_list(*args):
     """
-
+    The function returns unnamed arguments
+    in a reverse sequence
     """
     return args
 
@@ -35,7 +37,7 @@ def args_list(*args):
 @decorators.uppercase_decorator
 def text_uppercase(text: str):
     """
-
+    The function returns text in the upper case
     """
     return text
 
