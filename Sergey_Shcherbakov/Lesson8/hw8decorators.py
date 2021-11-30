@@ -29,7 +29,7 @@ def decorator2(func):
 
 
 # 3. Напишите функцию декоратор, которая переводит полученный текст в верхний регистр
-def decorator3(txt):
+def decorator3(func):
     """
     The decorator function that translates the resulting text into uppercase
     """
@@ -62,9 +62,8 @@ def decorator5(func):
     """
 
     def wrapper(*args):
-        li = [*args]
-        obli = li[::-1]
-        func(obli)
+        li = func(*args[::-1])
+        return li
 
     return wrapper
 
