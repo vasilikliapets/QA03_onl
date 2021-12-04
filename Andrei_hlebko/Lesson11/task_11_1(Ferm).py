@@ -4,7 +4,7 @@ from abc import ABC
 class Birds(ABC):
     def __init__(self, name, ages):
         self.name = name
-        self.__ages__ = ages
+        self._ages = ages
 
     def get_age(self):
         return self.__ages__
