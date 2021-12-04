@@ -7,14 +7,14 @@ class Birds(ABC):
         self._ages = ages
 
     def get_age(self):
-        return self.__ages__
+        return self._ages
 
     @staticmethod
     def fly():
         print("Я лечуу!")
 
     def grow_old(self):
-        self.__ages__ += 1
+        self._ages += 1
 
     @staticmethod
     def voice():
@@ -24,17 +24,17 @@ class Birds(ABC):
 class Animals(ABC):
     def __init__(self, name, ages):
         self.name = name
-        self.__ages__ = ages
+        self._ages = ages
 
     def get_age(self):
-        return self.__ages__
+        return self._ages
 
     @staticmethod
     def move():
         print("Я хожу!")
 
     def grow_old(self):
-        self.__ages__ += 1
+        self._ages += 1
 
     @staticmethod
     def voice():
