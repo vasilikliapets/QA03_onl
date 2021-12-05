@@ -3,22 +3,6 @@ from abc import ABC, abstractmethod
 
 #1 
 
-""" My Exeptions """
-""" Я это так понял:)"""
-
-class AttributeError(Exception):
-    def __init__(self):
-        super().__init__()
-        raise NotExistException
-
-class MyException(Exception):
-    pass
-
-class NotExistException(MyException):
-    print(f'Для этого класса такого метода не существует')
-
-
-
 """ Ferm """
 
 class Animals(ABC):
@@ -78,7 +62,7 @@ class Pig(Animals):
         print(f'Animal {self.__class__.__name__} with name {name} was born')
 
     def get_age(self):
-        print(f'{self.__age} years')
+        return self.__age
 
     def get_older(self):
         self.__age += 1
@@ -98,7 +82,7 @@ class Cow(Animals):
         print(f'Animal {self.__class__.__name__} with name {name} was born')
 
     def get_age(self):
-        print(f'{self.__age} years')
+        return self.__age
 
     def get_older(self):
         self.__age += 1
@@ -152,17 +136,23 @@ class Chicken(Birds):
 
 
 class Ferm:
-    def __init__(self, list_of_animals = []):
+    def __init__(self, list_of_animals = None):
         self.animals = list_of_animals
+        if list_of_animals == None:
+            list_of_animals = []
+        
         for i in self.animals:
             print (f'{i.__class__.__name__} {i.name} on the ferm')
     
     def get_animals_by_index(self, index):
-        print(f'{self.animals[index].__class__.__name__} {self.animals[index].name}')
+        animals = f'{self.animals[index].__class__.__name__} {self.animals[index].name}'
+        return animals
         
-    def get_animals_by_for(self): 
+    def get_animals_by_for(self):
+        animals = []
         for i in self.animals:
-            print (f'{i.__class__.__name__} {i.name}')
+            animals.append(i.__class__.__name__)
+        return animals
 
     def get_older(self):
         for animals in self.animals:
@@ -171,23 +161,38 @@ class Ferm:
 
 
 pig_1 = Pig('"Nif-Nif"')
-pig_1.ged_age()
+print(pig_1.get_age(), 'years')
 pig_1.get_older()
-pig_1.get_age()
+print(pig_1.get_age(), 'years')
 pig_1.walk()
 pig_1.voice()
 
 cow_1 = Cow('"Black"')
-cow_1.get_age()
+print(cow_1.get_age(), 'years')
 cow_1.get_older()
-cow_1.get_age()
+print(cow_1.get_age(), 'years')
 
 ferm_1 = Ferm([pig_1, cow_1])
-ferm_1.get_animals_by_index(1)
-ferm_1.get_animals_by_for()
+print(ferm_1.get_animals_by_index(1))
+print(ferm_1.get_animals_by_for())
 ferm_1.get_older()
 
-pig_1.get_age()
+
+
+""" My Exeptions """
+""" Посмотрел, как сделали другие и понял, что я понял не верно. Поправил аналогично пройденному материалу на лекции"""
+
+class MyException(Exception):
+    pass
+
+class NotExistException(MyException):
+    pass
+
+
+try:
+    pig_1.ged_age()
+except AttributeError as err:
+    raise NotExistException(f"Your mistake > {err}")
 
 
 
