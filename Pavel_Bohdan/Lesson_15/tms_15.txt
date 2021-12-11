@@ -1,0 +1,36 @@
+#1
+""" Список команд в intro """
+date, cal, ls, ls -l, chown, chmod, cat, cp, mv, diff, rm, grep, pwd, cd, mkdir, rmdir, find, mount, umount, df, ps, kill, info
+
+#2
+""" man """
+Go to first line in file : g < ESC-<
+Go to last line in file : G > ESC->
+Forward one window : f ^F ^V SPACE
+Forward one line : e ^E j ^N CR
+Backward one line : y ^Y k ^K ^P
+Search forward for matching line : /pattern
+Search beckward for matching line : ?pattern
+Repeat previous search : n
+Repeat previous search in reverse direction : N
+
+#3
+Output of entire files : cat, tac, nl, od, base32, base64, basenc
+Output of parts of files: head, tail, split, csplit
+Basic operation: cp, dd, install, mv, rm, shred
+Changing file attributes: chgrp, chmod, chown, touch
+Disk usage: df, du, stat, sync, truncate
+User information: id, logname, whoami, groups, users, who
+System context: date, arch, nproc, uname, hostname, hostid, uptime
+
+#4
+/dev/null - символьное устройство
+/dev/zero - символьное устройство
+/dev/sda - каталог
+/dev/tty - символьное устройство
+/root - каталог
+/etc/passwd - обычный файл
+/proc/mounts - символьная ссылка
+/bin/ls - обычный файл
+/bin/zcat - символьная ссылка
+
