@@ -1,9 +1,14 @@
 #!/bin/bash
 echo "Введите число"
 read a
+if [ $a -ne 0 ]
+then
 if [ $a -gt 0 ]
-then 
+then
 echo "Число  $a положительное"
 else
 echo "Число $a отрицательное"
+fi
+else
+echo "Число равно 0"
 fi
