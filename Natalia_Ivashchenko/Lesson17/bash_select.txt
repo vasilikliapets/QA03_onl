@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "Хотите ли Вы установить python?"
+select otvet in Да Нет
+do
+case $otvet in
+	Да)
+	echo "Вы выбрали установить python"
+	;;
+	*)
+	echo "Уходи дверь закрой"
+esac
+break
+done
