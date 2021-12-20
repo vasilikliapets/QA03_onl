@@ -1,0 +1,14 @@
+#1 Юзеры
+
+p_bohdan:x:1000:1000:P_Bohdan:/home/p_bohdan:/bin/bash
+bender:x:1001:1001::/home/bender:/bin/bash
+flexo:x:1002:1002::/home/flexo:/bin/bash
+
+#2 Команды
+
+1.useradd bender
+2.useradd flexo
+3.passwd futurama
+4.passwd iamarobot
+5.groupadd mafia
+6.#Как добавить в группу на разобрался.
