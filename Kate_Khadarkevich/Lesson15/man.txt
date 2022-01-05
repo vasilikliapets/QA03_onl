@@ -1,0 +1,98 @@
+1. Используем команду man чтобы прочитать краткое описание команд для  файлов устройств.
+urandom (4)
+NAME
+       random, urandom - kerner random number source devices
+
+zero (4) 
+NAME
+       null, zero - data sink
+
+null (4)
+NAME
+       null, zero - data sink 
+
+full (4) 
+NAME
+       full - always full device
+
+loop (4)
+NAME 
+       loop, loop-control - loop devices
+
+sd (4)
+NAME
+       sd - driver for SCSI disk drives
+
+
+2. Используем команду man чтобы прочитать описание intro (1) Составить список всех команд которые упоминаются на странице помощи. 
+date, cal, ls, cp, mv, diff, rm, grep, pwd, cd, mkdir, rmdir, find, mount, umount, df, kill, chown, chmod
+
+3. Зайти в режим помощи man  (man man; press h key for help mode): 
+заполнить таблицу (можно списком) для клавиш 
+
+Go to first line in file                        g < ESC-<
+Go to last line in file                         G > ESC->
+Forward  one window                             f ^F ^V SPACE
+Forward  one line                               e ^E j ^N CR
+Backward one line                               y ^Y k ^K ^P
+Search forward for matching line                /pattern
+Search backward for matching line               ?pattern
+Repeat previous search                          n
+Repeat previous search in reverse direction     N
+
+
+4. Зайти в режим помощи командой info Зайти на страницу  *Coreutils page. Заполнить таблицу командами (можно списком)
+
+* Output of entire files::     	
+cat invocation::               Concatenate and write files
+tac invocation::               Concatenate and write files in reverse
+nl invocation::                Number lines and write files
+od invocation::                Write files in octal or other formats
+base32 invocation::            Transform data into printable data
+base64 invocation::            Transform data into printable data
+
+* Output of parts of files::     	
+head invocation::              Output the first part of files
+tail invocation::              Output the last part of files
+split invocation::             Split a file into fixed-size pieces
+csplit invocation::            Split a file into context-determined pieces
+
+*Basic operations::           	
+cp invocation::                Copy files and directories
+dd invocation::                Convert and copy a file
+install invocation::           Copy files and set attributes
+mv invocation::                Move (rename) files
+rm invocation::                Remove files or directories
+shred invocation::             Remove files more securely
+
+* Changing file attributes::     	
+chown invocation::             Change file owner and group
+chgrp invocation::             Change group ownership
+chmod invocation::             Change access permissions
+touch invocation::             Change file timestamps
+
+* Disk usage::               	
+df invocation::                Report file system disk space usage
+du invocation::                Estimate file space usage
+stat invocation::              Report file or file system status
+sync invocation::              Synchronize cached writes to persistent storage
+truncate invocation::          Shrink or extend the size of a file
+
+* User information::         	
+id invocation::                Print user identity
+logname invocation::           Print current login name
+whoami invocation::            Print effective user ID
+groups invocation::            Print group names a user is in
+users invocation::             Print login names of users currently logged in
+who invocation::               Print who is currently logged in
+
+* System context::               	
+arch invocation::              Print machine hardware name
+date invocation::              Print or set system date and time
+nproc invocation::             Print the number of processors
+uname invocation::             Print system information
+hostname invocation::          Print or set system name
+hostid invocation::            Print numeric host identifier
+uptime invocation::            Print system uptime and load
+
+
