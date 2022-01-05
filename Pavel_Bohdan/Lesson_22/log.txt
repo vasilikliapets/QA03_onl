@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.1, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- /home/p_bohdan/QAAutomation_TMS/Test_Project/virtualenv/selenium/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/p_bohdan/QAAutomation_TMS/QA03_onl/Pavel_Bohdan/Lesson_22
+collecting ... collected 2 items
+
+test_HW_22_Locators.py::test_css_locator PASSED                          [ 50%]
+test_HW_22_Locators.py::test_xpath_locators PASSED                       [100%]
+
+============================== 2 passed in 6.43s ===============================
