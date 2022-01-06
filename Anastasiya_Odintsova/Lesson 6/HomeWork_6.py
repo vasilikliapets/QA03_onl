@@ -55,3 +55,37 @@ def count_text(a):
 
 a = input("Введите любое значение:")
 count_text(a)
+
+# 3
+def calc():
+    while True:
+        print("Дествие, которое хотите сделать:\n"
+              "Сложить: +\n"
+              "Вычесть: -\n"
+              "Умножить: *\n"
+              "Поделить: /\n")
+        action = input("Выберите действие: ")
+        if action not in ('+', '-', '*', '/'):
+            print("Фиг что посчитаешь")
+            break
+        if action in ('+', '-', '*', '/'):
+            x = float(input("x = "))
+            y = float(input("y = "))
+            if action == '+':
+                print(x+y)
+                break
+            elif action == '-':
+                print(x-y)
+                break
+            elif action == '*':
+                print(x*y)
+                break
+            elif action == '/':
+                if y != 0:
+                    print( x/y)
+                    break
+                else:
+                    print("Делить на ноль нельзя!")
+                    break
+
+calc()
