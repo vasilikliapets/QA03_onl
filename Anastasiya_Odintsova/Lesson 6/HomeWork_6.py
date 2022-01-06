@@ -1,6 +1,8 @@
 # 1
 def validate(card):
-    """Функция проверяет введенный номер карты на наличение любых символов отличных от цифр"""
+    """
+    Функция проверяет введенный номер карты на наличение любых символов отличных от цифр
+    """
     if card.isdigit() is True:
         check_card(card)
         print(card)
@@ -32,13 +34,15 @@ a = input('Введите номер карты: ')
 validate(a)
 
 # 2
-def count(a):
-    """Функция считае количество повторяющихся символов"""
+def count_text(a):
+    """
+    Функция считает количество букв
+    """
     count = 1
     x = 1
-    j = a[x:x + 1]
+    y = a[x:x + 1]
     for i in a:
-        if i in j:
+        if i in y:
             count += 1
 
         else:
@@ -47,7 +51,7 @@ def count(a):
                 print(count, end='')
                 count = 1
         x += 1
-        j = a[x:x + 1]
+        y = a[x:x + 1]
 
 a = input("Введите любое значение:")
-count(a)
+count_text(a)
