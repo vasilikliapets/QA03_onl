@@ -106,3 +106,17 @@ def func(a, *args, name=None, **kwargs):
 
 result = func(1, 2, 3, name='test2', surname='test2', some='something')
 print(result)
+
+# 5
+def change_list(my_list):
+    """
+    Функция создает копию листа и редактирует его не изменяя первоначальный лист
+    """
+    my_list_2 = my_list[:]
+    my_list_2.append("a")
+    return my_list_2
+
+
+changed_list_2 = change_list(my_list)
+print(my_list)
+print(changed_list_2)
