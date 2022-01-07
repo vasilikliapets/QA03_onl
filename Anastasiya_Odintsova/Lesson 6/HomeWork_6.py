@@ -59,33 +59,50 @@ count_text(a)
 # 3
 def calc():
     while True:
-        print("Дествие, которое хотите сделать:\n"
-              "Сложить: +\n"
-              "Вычесть: -\n"
-              "Умножить: *\n"
-              "Поделить: /\n")
-        action = input("Выберите действие: ")
-        if action not in ('+', '-', '*', '/'):
+        print("Выберите операцию:\n"
+              "Сложение: 1\n"
+              "Вычитание 2\n"
+              "Умножение: 3\n"
+              "Деление: 4\n")
+        action = input("Введите номер пункта меню:\n")
+        if action not in ('1', '2', '3', '4'):
             print("Фиг что посчитаешь")
-            break
-        if action in ('+', '-', '*', '/'):
-            x = float(input("x = "))
-            y = float(input("y = "))
-            if action == '+':
+            action = input("Выберите номер пункта меню еще раз:\n")
+        if action in ('1', '2', '3', '4'):
+            x = float(input("Введите первое число:\n"))
+            y = float(input("Введите второе число:\n"))
+            if action == '1':
                 print(x+y)
                 break
-            elif action == '-':
+            elif action == '2':
                 print(x-y)
                 break
-            elif action == '*':
+            elif action == '3':
                 print(x*y)
                 break
-            elif action == '/':
+            elif action == '4':
                 if y != 0:
-                    print( x/y)
+                    print(x/y)
                     break
                 else:
                     print("Делить на ноль нельзя!")
                     break
 
 calc()
+
+# 4
+def func(a, *args, name=None, **kwargs):
+    """""
+    Функция выводит измененные входные параметры
+    """
+    di = {"mandatory_position_argument": a}
+    if args != ():
+        di["additional_position_arguments"] = args
+    di["mandatory_named_argument"] = {'name': name}
+    if kwargs != ():
+        di["additional_named_arguments"] = kwargs
+    return di
+
+
+result = func(1, 2, 3, name='test2', surname='test2', some='something')
+print(result)
