@@ -144,7 +144,6 @@ def my_function(list):
 print(my_function([1, 2, "a", (4, 5), "b", (6, 7), "с", 8, 9]))
 
 # 7 Пример, где hash от объектов 1 и 2 одинаковые, а id разные
-
 a = 1
 b = 1.0
 
@@ -152,3 +151,16 @@ print(hash(a), "-> Hash от a")
 print(hash(b), "-> Hash от b")
 print(id(a), "-> ID от a")
 print(id(b), "-> ID от b")
+
+# 8
+def check_func(list_obj):
+    """
+    Функция проверяет есть ли в списке объект, который можно вызвать
+    """
+    for i in range(len(list_obj)):
+        if callable(list_obj[i]):
+            return True
+    return False
+
+list_obj = [1, 2, "3", calc]
+print(check_func(list_obj))
