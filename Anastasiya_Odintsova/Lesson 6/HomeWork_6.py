@@ -120,3 +120,35 @@ def change_list(my_list):
 changed_list_2 = change_list(my_list)
 print(my_list)
 print(changed_list_2)
+
+# 6
+def my_function(list):
+    count_int = 0
+    count_str = 0
+    count_tuple = 0
+
+    for i in range(len(list)):
+        if type(list[i]) == int:
+            count_int += 1
+        elif type(list[i]) == str:
+            count_str += 1
+        elif type(list[i]) == tuple:
+            count_tuple += 1
+        else:
+            pass
+
+    dict_counter = {'int': count_int, 'str': count_str, 'tuple': count_tuple}
+    return dict_counter
+
+
+print(my_function([1, 2, "a", (4, 5), "b", (6, 7), "с", 8, 9]))
+
+# 7 Пример, где hash от объектов 1 и 2 одинаковые, а id разные
+
+a = 1
+b = 1.0
+
+print(hash(a), "-> Hash от a")
+print(hash(b), "-> Hash от b")
+print(id(a), "-> ID от a")
+print(id(b), "-> ID от b")
