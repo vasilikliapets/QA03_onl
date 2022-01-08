@@ -9,7 +9,6 @@ def get_time():
     print(f"\nВремя старта: {start}")
     yield
     print(f"\nВремя завершения: {time.perf_counter()}")
-    return start
 
 
 @pytest.fixture(scope='module')
