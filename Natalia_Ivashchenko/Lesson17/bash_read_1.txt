@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Введите число"
+read x
+if [ $x -gt 15 -a $x -lt 45 ]
+then
+echo "Число $x больше 15 и меньше 45"
+else
+echo "Число $x не подходит"
+fi

@@ -1,0 +1,25 @@
+    1  sudo useradd bender	# добавляем нового юзера bender
+    2  sudo useradd flexo	# добавляем нового юзера flexo
+    3  cat /etc/passwd		# проверяем появились ли новые юзеры
+    result:	
+    		darya:x:1000:1000:Darya,,,:/home/darya:/bin/bash
+		systemd-coredump:x:999:999:systemd Core Dumper:/:/usr/sbin/nologin
+		test_user:x:1001:1001::/home/test_user:/bin/sh
+		bender:x:1002:1003::/home/bender:/bin/sh
+		flexo:x:1003:1004::/home/flexo:/bin/sh
+    
+    4  sudo passwd bender	# присваеваем пароль futurama юзеру bender 
+    5  sudo passwd flexo	# присваиваем пароль iamarobot юзеру flexo
+    6  sudo passwd bender	# меняем пароль на ilovelinux(от бендера поменять пароль нельзя, поэтому меняла от дарьи)
+    7  sudo passwd bender	# меняем пароль обратно на futurama
+    8  sudo su			# с группами у меня можно работать только от рута
+    9  groupadd mafia		# создаём новую группу mafia
+   10  sudo usermod -a -G mafia bender	# добавляем пользователя bender в группу mafia
+   11  groups bender		# проверяем появилась ли у пользователя bender группа mafia
+   result:
+   		bender : bender mafia
+   12  sudo usermod -a -G mafia flexo		# добавляем пользователя flexo в группу
+   13  groups flexo		# проверяем появилась ли у пользователя flexo группа mafia
+   result:
+   		flexo : flexo mafia
+  

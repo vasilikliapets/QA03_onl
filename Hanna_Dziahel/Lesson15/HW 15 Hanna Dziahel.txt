@@ -1,0 +1,141 @@
+Работаем с документацией man
+Зачем делать:
+В Linux/Unix системах есть встроенная система документации. Она подходит для случаев когда нужно вспомнить аргумент команды или что делает команда. Одним из ключевых навыков работы является умение найти нужную информацию. В задании мы отрабатываем этот навык.
+
+Задание:
+●	Читаем любой из документов  про то как узнавать ответы на вопросы самостоятельно 
+a.	 https://habr.com/ru/post/460221/ 
+b.	https://jvns.ca/blog/good-questions/
+c.	http://www.catb.org/~esr/faqs/smart-questions.html (TLDR)
+●	Используем команду man чтобы прочитать краткое описание команд для  файлов устройств:
+urandom (4), zero (4), null (4), full (4), loop (4), sd (4)
+1)	urandom 4
+NAME
+random, urandom - kernel random number source devices
+2)	zero 4
+NAME
+null, zero - data sink
+3)	null 4
+NAME
+       null, zero - data sink
+4)	full 4
+NAME
+       full - always full device
+5)	loop 4
+NAME
+       loop, loop-control - loop devices
+6)	sd 4
+NAME
+       sd - driver for SCSI disk drives
+
+●	Используем команду man чтобы прочитать описание intro (1) Составить список всех команд которые упоминаются на странице помощи. 
+-	date
+-	cal
+-	ls
+-	cat
+-	cp
+-	mv
+-	diff
+-	rm
+-	grep
+-	pwd
+-	cd
+-	mkdir
+-	rmdir
+-	find
+-	mount
+-	umount
+-	df
+-	ps
+-	kill
+
+●	Зайти в режим помощи man  (man man; press h key for help mode): 
+заполнить таблицу (можно списком) для клавиш 
+Go to first line in file	g  <  ESC-<
+Go to last line in file	G  >  ESC->
+Forward  one window	f  ^F  ^V  SPACE
+Forward  one line	e  ^E  j  ^N  CR
+Backward one line	y  ^Y  k  ^K  ^P
+Search forward for matching line	/pattern
+Search backward for matching line	?pattern
+Repeat previous search	N
+Repeat previous search in reverse direction	N
+
+●	Зайти в режим помощи командой info Зайти на страницу  *Coreutils page. Заполнить таблицу командами (можно списком)
+
+* Output of entire files::     	
+* cat invocation::               Concatenate and write files
+* tac invocation::               Concatenate and write files in reverse
+* nl invocation::                Number lines and write files
+* od invocation::                Write files in octal or other formats
+* base32 invocation::            Transform data into printable data
+* base64 invocation::            Transform data into printable data
+
+* Output of parts of files::     	
+* head invocation::              Output the first part of files
+* tail invocation::              Output the last part of files
+* split invocation::             Split a file into fixed-size pieces
+* csplit invocation::            Split a file into context-determined pieces
+
+* Basic operations::           	
+* cp invocation::                Copy files and directories
+* dd invocation::                Convert and copy a file
+* install invocation::           Copy files and set attributes
+* mv invocation::                Move (rename) files
+* rm invocation::                Remove files or directories
+* shred invocation::             Remove files more securely
+
+* Changing file attributes::     	
+* chown invocation::             Change file owner and group
+* chgrp invocation::             Change group ownership
+* chmod invocation::             Change access permissions
+* touch invocation::             Change file timestamps
+
+* Disk usage::               	
+* df invocation::                Report file system disk space usage
+* du invocation::                Estimate file space usage
+* stat invocation::              Report file or file system status
+* sync invocation::              Synchronize cached writes to persistent storage
+* truncate invocation::          Shrink or extend the size of a file
+
+* User information::         	
+* id invocation::                Print user identity
+* logname invocation::           Print current login name
+* whoami invocation::            Print effective user ID
+* groups invocation::            Print group names a user is in
+* users invocation::             Print login names of users currently logged in
+* who invocation::               Print who is currently logged in
+
+* System context::               	
+* arch invocation::              Print machine hardware name
+* date invocation::              Print or set system date and time
+* nproc invocation::             Print the number of processors
+* uname invocation::             Print system information
+* hostname invocation::          Print or set system name
+* hostid invocation::            Print numeric host identifier
+* uptime invocation::            Print system uptime and load
+
+Определить тип файла
+Зачем делать:
+В UNIX-подобных операционных системах существует несколько типов файлов
+Обычный файл (англ. regular file), каталог (англ. directory) Именованный канал (англ. named pipe) Символическая ссылка (англ. soft link) socket, блочное  устройство block special, символьное устройство character special.
+Для навигации в файловой системе нужно отличать директории от остальных типов файлов
+Задание:
+Список файлов - определите их тип разными способами
+/dev/null
+/dev/zero
+/dev/sda
+/dev/tty
+/root
+/etc/passwd
+/proc/mounts
+/bin/ls
+/bin/zcat
+●	командой ls -l
+●	командой stat
+чтобы сохрянять результаты выполнения в файл используйте конструкцию >>  перенаправление в файл
+например: команда 
+stat /dev/null >> file_types.txt 
+добавит результат выполнения в файл file_types.txt 
+ Результат работы:
+●	файл с выводом для команд по определению типа файла (можно сделать скрин)

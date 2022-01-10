@@ -1,0 +1,14 @@
+#!/bin/bash
+echo "Введите путь к файлу или директории"
+read mydir
+if [ -e $mydir ]
+then 
+if [ -d $mydir ]
+then
+echo "Директория сущесвует"
+else
+echo "Файл существует"
+fi
+else
+echo "Файл/директория не существует"
+fi

@@ -1,0 +1,9 @@
+#!/bin/bash
+for (( i=11; i >=1; i-- ))
+do
+let "c = i % 2"
+if [ $c -eq 0 ]
+then
+echo "$i"
+fi
+done
