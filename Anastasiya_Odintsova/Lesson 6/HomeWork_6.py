@@ -108,6 +108,8 @@ result = func(1, 2, 3, name='test2', surname='test2', some='something')
 print(result)
 
 # 5
+my_list = [1, 2, 3, 4] 
+
 def change_list(my_list):
     """
     Функция создает копию листа и редактирует его не изменяя первоначальный лист
