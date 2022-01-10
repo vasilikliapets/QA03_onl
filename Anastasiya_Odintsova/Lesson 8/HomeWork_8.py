@@ -15,14 +15,14 @@ def my_precious():
 my_precious()
 
 # 2 Напишите функцию декоратор, которая добавляет 1 к заданному числу
-def func_1 (func):
+def decorator_2 (func):
     def wrapper (*args):
         result = func(*args)+1
         return result
     return wrapper
 
 
-@func_1
+@decorator_2
 def summa(x):
     x=5
     return x
@@ -81,11 +81,11 @@ def timer(func):
         print(f"{time.perf_counter_ns() - start_time} наносекунд")
         return res
 
-    return
+    return wrapper
 
 # 7 Напишите функцию, которая вычисляет значение числа Фибоначчи для заданного количество элементов последовательности и возвращает его и оберните ее декоратором timer и func_name
 @timer
-def decorator_7(n):
+def func_fibba(n):
     num_1 = 0
     num_2 = 1
     print(f'Последовательность Фибоначчи до {n} числа: ')
@@ -97,10 +97,10 @@ def decorator_7(n):
 
 # 8 Напишите функцию, которая вычисляет сложное математическое выражение и оберните ее декоратором из пункта 1, 2
 @decorator_1
-@func_1
-def decorator_8(x, y):
+@decorator_2
+def math(x, y):
     result = x ** 3.14 * y - 5 * x * y ** 8 * (x - y)/10
     return result
 
 
-decorator_8(5, 10)
+math(5, 10)
