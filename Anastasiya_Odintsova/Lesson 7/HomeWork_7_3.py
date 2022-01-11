@@ -11,9 +11,15 @@ while i < 4:
           'Кодировать: 2\n')
     program = input('Введите номер программы: \n')
     if program == '1':
-        bank(a, years)
+        a = float(input('Сумма вклада: '))
+        years = int(input('Срок вклада: '))
+        print(bank(a, years))
     elif program == '2':
-        enode()
+        message = input('Введите фразу: ')
+        shift = int(input('Значение шифрования: '))
+        for letter in message:
+            res1, res2 = encode(letter, shift)
+            print(res1, res2)
     else:
         i += 1
         if i < 4:
