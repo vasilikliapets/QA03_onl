@@ -7,7 +7,7 @@ from function_3 import check_punctuation
 @pytest.mark.parametrize('word', ['type', 'world', 'cold'])
 def test_check_lower_pos(word, get_time, get_name, count_time):
     """test for positive"""
-    assert check_lower(word) is True
+    assert check_lower(word)
 
 
 @pytest.mark.parametrize('word', ["God", 'America', 'USA_12'])
