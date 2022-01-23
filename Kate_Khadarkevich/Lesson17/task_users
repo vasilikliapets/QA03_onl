@@ -1,0 +1,33 @@
+# создаю пользователей bender и flexo с паролями futurama и iamarobot, соответственно.
+
+sudo useradd bender
+sudo useradd flexo
+sudo passwd bender
+sudo passwd flexo
+
+# меняю пароль на ilovelinux.
+sudo passwd bender
+
+# меняю пароль bender обратно на futurama.
+sudo passwd bender
+
+# создаю группу mafia и добавляю в неё пользователей bender и flexo.
+sudo groupadd mafia
+sudo usermod -a -G mafia bender
+sudo usermod -a -G mafia flexo
+
+# Список групп
+cut -d: -f1 /etc/group | sort
+
+# Список пользователей
+cat /etc/passwd
+
+katy:x:1000:1000:Katy,,,:/home/katy:/bin/bash
+vboxadd:x:999:1::/var/run/vboxadd:/bin/false
+bender:x:1001:1001::/home/bender:/bin/sh
+flexo:x:1002:1002::/home/flexo:/bin/sh
+
+
+
+
+

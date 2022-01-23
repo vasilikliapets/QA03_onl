@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo -n "Enter the number of directories to create: "
+read number
+eval mkdir {1..$number}
+
+exit 0
