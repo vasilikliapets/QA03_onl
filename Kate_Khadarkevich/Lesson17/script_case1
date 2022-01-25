@@ -1,0 +1,8 @@
+#!/bin/bash
+echo -n "Enter your letter: "
+read letter
+case $letter in
+[[:lower:]]) echo "This letter is lowercase";;
+[[:upper:]]) echo "This letter is uppercase";;
+[0-9]) echo "This isn't a letter, but a number";;
+esac

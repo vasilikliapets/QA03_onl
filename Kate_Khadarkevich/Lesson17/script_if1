@@ -1,0 +1,14 @@
+#!/bin/bash
+echo -n "Enter the number: "
+read number
+if [ $number -ne 0 ]
+    then
+        if [ $number -gt 0 ]
+	    then 
+		echo "$number - a positive number"
+	    else 
+		echo "$number - negative number"
+	fi
+    else
+        echo "This is zero"
+fi

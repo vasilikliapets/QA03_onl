@@ -1,0 +1,14 @@
+#!/bin/bash
+echo -n "Enter file path: "
+read path
+if [ -d $path ] || [ -f $path ]
+then
+	if [ -d $path ]
+	then 
+		echo "It's directory"
+	else
+		echo "It's file"
+	fi
+else
+	echo "Nothing found"
+fi

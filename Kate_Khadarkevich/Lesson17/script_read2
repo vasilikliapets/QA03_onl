@@ -1,0 +1,9 @@
+#!/bin/bash
+echo -n "Enter your number: "
+read number
+if [[ $number -lt -1 || $number -eq 45 ]]
+then
+    echo "Number is true"
+else
+    echo "Number is false"
+fi
