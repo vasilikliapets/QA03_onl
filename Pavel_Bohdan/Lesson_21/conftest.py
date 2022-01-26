@@ -10,3 +10,9 @@ def browser():
     yield driver
     driver.implicitly_wait(15)
     driver.quit()
+
+
+@pytest.fixture
+def main_page(browser):
+    browser.get('http://the-internet.herokuapp.com')
+    return browser
