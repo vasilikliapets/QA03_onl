@@ -9,3 +9,9 @@ def browser():
     yield browser
     browser.implicitly_wait(15)
     browser.quit()
+
+
+@pytest.fixture
+def fillingout_forms_page(browser):
+    browser.get('https://ultimateqa.com/filling-out-forms/')
+    return browser
