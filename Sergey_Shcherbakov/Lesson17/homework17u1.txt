@@ -1,0 +1,29 @@
+Используя консольные команды выполните следующие действия:
+*Создайте пользователей bender и flexo с паролями futurama и iamarobot, соответственно.
+
+sudo adduser bender
+sudo passwd bender
+sudo passwd flexo
+
+*Проверьте, правильно ли представлены новые пользователи в системе. файл /etc/passwd, /etc/groups, команда id
+
+cat /etc/passwd
+sergey:x:1000:1000:Sergey,,,:/home/sergey:/bin/bash
+bender:x:1001:1001::/home/bender:/bin/sh
+flexo:x:1002:1002::/home/flexo:/bin/sh
+
+*Войдите в систему как пользователь bender и измените пароль на ilovelinux.
+
+su bender
+sudo passwd ilovelinux
+
+*Как суперпользователь изменить пароль bender обратно на futurama.
+
+sudo passwd flexo
+
+Создайте группу mafia и добавьте в неё пользователей bender и flexo.
+
+sudo groupadd mafia
+sudo usermod -a -G mafia bender
+sudo usermod -a -G mafia flexo
+mafia:x:1003:bender,flexo
