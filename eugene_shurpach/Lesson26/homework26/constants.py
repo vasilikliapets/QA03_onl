@@ -1,0 +1,2 @@
+LOGIN_INCORRECT = 'anton12@google.com'
+PASS_INCORRECT = '123456789#'
