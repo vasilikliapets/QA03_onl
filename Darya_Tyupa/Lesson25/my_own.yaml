@@ -1,0 +1,14 @@
+stuff:
+  employees:
+  - age: 28
+    email: darya@gmail.com
+    name: Daria Tyupa
+    position: QA
+  - age: 35
+    email: pavel@gmail.com
+    name: Pavel Nikolin
+    position: DEV
+  employer:
+    age: 32
+    email: denis@gmail.com
+    name: Denis Syraeshko
