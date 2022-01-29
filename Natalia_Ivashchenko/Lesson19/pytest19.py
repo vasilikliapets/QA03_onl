@@ -13,7 +13,7 @@ class TestPozitiv:
     @pytest.mark.parametrize('chislo', ['3', '46', '23'])
 #    @pytest.fixture(params=['3', '46', '23'])
     def test_numbers(self, chislo):
-        assert chisla.check_number(chislo), float(int(chislo))
+        assert type(chisla.check_number(chislo)), float
 
     @pytest.mark.parametrize('symbol', ['@', '?', '+'])
     def test_symbols(self, symbol):
@@ -22,8 +22,5 @@ class TestPozitiv:
 
 class TestForError:
     def test_error(self):
-        with pytest.raises(InputTypeError): chisla.check_number('qwe')
-
-
-if __name__ == '__main__':
-    pytest.main()
+        with pytest.raises(InputTypeError):
+            chisla.check_number('qwe')
