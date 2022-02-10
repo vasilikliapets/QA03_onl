@@ -22,7 +22,7 @@ def test_create_user():
     with allure.step('Send request. Check status code'):
         assert response.status_code == 200, "Wrong status code"
     with allure.step('Check user id in response body'):
-        assert '666' in create_user(new_user).text, 'No such user id'
+        assert '666' in response.text, 'No such user id'
 
 
 @allure.story("Login new user")
