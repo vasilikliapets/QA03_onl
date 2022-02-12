@@ -1,4 +1,5 @@
 from eugene_shurpach.Final_task.tools.base_page import BasePage
+from eugene_shurpach.Final_task.tools.basket_page import BasketPage
 from eugene_shurpach.Final_task.tools.constants import USER_EMAIL, USER_PASS
 from eugene_shurpach.Final_task.tools.ducks_page import DucksPage
 from eugene_shurpach.Final_task.tools.main_page_locators import MainPageLocators

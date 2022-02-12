@@ -1,5 +1,4 @@
 from selenium.webdriver import Keys
-
 from eugene_shurpach.Final_task.tools.base_page import BasePage
 from eugene_shurpach.Final_task.tools.duck_page_locators import DuckPageLocators
 
