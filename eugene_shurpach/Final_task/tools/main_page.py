@@ -22,8 +22,8 @@ class MainPage(BasePage):
         return self.driver.current_url
 
     def open_ducks_page(self):
-        books_link = self.find_element(MainPageLocators.CATEGORIES_LOCATORS)
-        books_link.click()
+        categories_link = self.find_element(MainPageLocators.CATEGORIES_LOCATORS)
+        categories_link.click()
         return DucksPage(self.driver, self.driver.current_url)
 
     def open_basket_page(self):
