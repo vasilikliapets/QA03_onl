@@ -1,9 +1,9 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from eugene_shurpach.Final_task.tools.constants import USER_EMAIL
-from eugene_shurpach.Final_task.tools.main_page import MainPage
-from eugene_shurpach.Final_task.tools.main_page_locators import MainPageLocators
+from eugene_shurpach.diploma.tools.constants import USER_EMAIL
+from eugene_shurpach.diploma.tools.main_page import MainPage
+from eugene_shurpach.diploma.tools.main_page_locators import MainPageLocators
 import mysql.connector as mysql
 
 db = mysql.connect(

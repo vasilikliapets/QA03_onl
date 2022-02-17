@@ -1,6 +1,6 @@
-from eugene_shurpach.Final_task.tools.base_page import BasePage
-from eugene_shurpach.Final_task.tools.duck_page import DuckPage
-from eugene_shurpach.Final_task.tools.ducks_page_locators import DucksPageLocators
+from eugene_shurpach.diploma.tools.base_page import BasePage
+from eugene_shurpach.diploma.tools.duck_page import DuckPage
+from eugene_shurpach.diploma.tools.ducks_page_locators import DucksPageLocators
 
 
 class DucksPage(BasePage):

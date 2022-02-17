@@ -1,5 +1,5 @@
-from eugene_shurpach.Final_task.tools.base_page import BasePage
-from eugene_shurpach.Final_task.tools.success_page_locators import SuccessPageLocators
+from eugene_shurpach.diploma.tools.base_page import BasePage
+from eugene_shurpach.diploma.tools.success_page_locators import SuccessPageLocators
 
 
 class SuccessPage(BasePage):

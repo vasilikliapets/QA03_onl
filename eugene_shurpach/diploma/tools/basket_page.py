@@ -1,6 +1,6 @@
-from eugene_shurpach.Final_task.tools.base_page import BasePage
-from eugene_shurpach.Final_task.tools.basket_page_locators import BasketPageLocators
-from eugene_shurpach.Final_task.tools.success_page import SuccessPage
+from eugene_shurpach.diploma.tools.base_page import BasePage
+from eugene_shurpach.diploma.tools.basket_page_locators import BasketPageLocators
+from eugene_shurpach.diploma.tools.success_page import SuccessPage
 
 
 class BasketPage(BasePage):
