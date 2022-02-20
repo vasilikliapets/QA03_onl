@@ -8,6 +8,7 @@ class DucksPage(BasePage):
     def open_yellow_duck_page(self):
         el = self.find_element(DucksPageLocators.YELLOW_DUCK_LOCATOR)
         el.click()
+        return DuckPage(self.driver, self.driver.current_url)
 
     def open_purple_duck_page(self):
         el = self.find_element(DucksPageLocators.PURPLE_DUCK_LOCATOR)

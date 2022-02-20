@@ -1,41 +1,19 @@
-import requests
-import json
+from eugene_shurpach.diploma.tools.constants import HOST_PET, PET_ID
+from eugene_shurpach.diploma.tools.api_steps import add_pet, get_pet_by_id, delete_pet
+import allure
 
-host = 'https://petstore.swagger.io/v2/pet'
 
-
+@allure.story("Check add, get and delete pet")
 def test_add_pet():
-    global host
-    add_pet = requests.post(host,
-                            json={
-                                "id": 0,
-                                "category": {
-                                    "id": 0,
-                                    "name": "string"
-                                },
-                                "name": "doggie",
-                                "photoUrls": [
-                                    "string"
-                                ],
-                                "tags": [
-                                    {
-                                        "id": 0,
-                                        "name": "string"
-                                    }
-                                ],
-                                "status": "available"
-                            })
-    assert add_pet.status_code == 200, 'Error adding pet'
-
-    pet_id = json.loads(add_pet.content)['id']
-    get_pet_by_id = requests.get(f'{host}/{pet_id}')
-    assert get_pet_by_id.status_code == 200, 'Error getting pet'
-
-    delete_pet = requests.delete(f'{host}/{pet_id}')
-    assert delete_pet.status_code == 200, 'Error deleting pet'
-
-    get_pet_after_delete = requests.get(f'{host}/{pet_id}')
-    # В API ошибка: при попытке получить удаленный элемент - возвращается случайный элемент
-    if get_pet_after_delete.status_code == 200:
-        assert json.loads(get_pet_after_delete.content)['id'] != pet_id
-    assert get_pet_after_delete.status_code == 404
+    with allure.step("Add new pet"):
+        add_new_pet = add_pet(HOST_PET, {"id": PET_ID, "name": "test_pet"})
+        assert add_new_pet.status_code == 200, 'Error adding pet'
+    with allure.step('Get pet by ID'):
+        get_my_pet = get_pet_by_id(HOST_PET, PET_ID)
+        assert get_my_pet.status_code == 200, 'Error getting pet'
+    with allure.step('Delete pet'):
+        delete_my_pet = delete_pet(HOST_PET, PET_ID)
+        assert delete_my_pet.status_code == 200, 'Error deleting pet'
+    with allure.step('Check pet does not exist'):
+        get_my_pet_after_del = get_pet_by_id(HOST_PET, PET_ID)
+        assert get_my_pet_after_del.status_code == 404
