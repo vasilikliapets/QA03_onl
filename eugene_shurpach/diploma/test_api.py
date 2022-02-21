@@ -1,5 +1,5 @@
 from eugene_shurpach.diploma.tools.constants import HOST_PET, PET_ID
-from eugene_shurpach.diploma.tools.api_steps import add_pet, get_pet_by_id, delete_pet
+from eugene_shurpach.diploma.tools.api_steps import add_pet, get_pet_by_id, delete_pet, get_content
 import allure
 
 
@@ -10,7 +10,7 @@ def test_add_pet():
         assert add_new_pet.status_code == 200, 'Error adding pet'
     with allure.step('Get pet by ID'):
         get_my_pet = get_pet_by_id(HOST_PET, PET_ID)
-        assert get_my_pet.status_code == 200, 'Error getting pet'
+        assert get_content(get_my_pet)['id'] == PET_ID, 'Error getting pet'
     with allure.step('Delete pet'):
         delete_my_pet = delete_pet(HOST_PET, PET_ID)
         assert delete_my_pet.status_code == 200, 'Error deleting pet'

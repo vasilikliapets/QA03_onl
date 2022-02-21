@@ -39,11 +39,11 @@ def test_order(driver):
 
 
 @allure.story("Check order in database")
-def test_order_db(cursor):
+def test_order_db(db_connect):
     with allure.step('Get order data'):
-        order_id = LitecartDB.find_order_id_by_user_email(cursor, USER_EMAIL)
+        order_id = LitecartDB.find_order_id_by_user_email(db_connect, USER_EMAIL)
     with allure.step('Check order in database'):
         assert len(order_id) == 1, 'Order does not exist'
     with allure.step("Delete order"):
         # удаление записи с заказом, чтобы можно было повторно запустить тесты скоупом
-       LitecartDB.delete_order_by_user_email(cursor, USER_EMAIL)
+       LitecartDB.delete_order_by_user_email(db_connect, USER_EMAIL)

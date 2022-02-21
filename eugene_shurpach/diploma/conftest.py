@@ -11,11 +11,11 @@ def driver():
 
 
 @pytest.fixture(scope="session")
-def cursor():
+def db_connect():
     db = mysql.connect(
         host='localhost',
         user='root',
         database='litecart')
-    cursor = db.cursor()
-    yield cursor
+    db_connect = db.cursor()
+    yield db_connect
     db.close()
